@@ -1,6 +1,6 @@
 # file: starter/app.py
 """
-SAR Workflow Dashboard
+SAR Sentinel
 Run with: streamlit run app.py
 Expects two files produced by the notebook export cell:
   starter/outputs/live_dashboard/sar_history.parquet      (historical filed SARs)
@@ -20,7 +20,34 @@ import streamlit as st
 # ──────────────────────────────────────────────────────────────────────────
 # CONFIG / PATHS
 # ──────────────────────────────────────────────────────────────────────────
-st.set_page_config(layout="wide", page_title="SAR Workflow Dashboard", page_icon="🛡️")
+st.set_page_config(layout="wide", page_title="SAR Sentinel", page_icon="🛡️")
+
+st.markdown(
+    """
+    <style>
+    .synthetic-watermark {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        z-index: 9999;
+        background: rgba(220, 38, 38, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #dc2626;
+        padding: 8px 16px;
+        border-radius: 14px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        pointer-events: none;
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        backdrop-filter: blur(20px) saturate(180%);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    }
+    </style>
+    <div class="synthetic-watermark">SYNTHETIC DATA · DEMO ONLY</div>
+    """,
+    unsafe_allow_html=True,
+)
 
 _STARTER_DIR  = os.path.dirname(os.path.abspath(__file__))   # starter/
 DATA_DIR      = os.path.join(_STARTER_DIR, "outputs", "live_dashboard")
@@ -83,7 +110,28 @@ if df_raw.empty:
 # SIDEBAR — GLOBAL FILTERS (apply to historical tabs)
 # ──────────────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.title("🛡️ Filters")
+    st.markdown("### 🛡️ SAR Sentinel")
+    st.markdown("---")
+    st.markdown(
+        """
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.4rem;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="21" x2="4" y2="14"></line>
+                <line x1="4" y1="10" x2="4" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="3"></line>
+                <line x1="20" y1="21" x2="20" y2="16"></line>
+                <line x1="20" y1="12" x2="20" y2="3"></line>
+                <line x1="1" y1="14" x2="7" y2="14"></line>
+                <line x1="9" y1="8" x2="15" y2="8"></line>
+                <line x1="17" y1="16" x2="23" y2="16"></line>
+            </svg>
+            <span style="font-size:1.75rem; font-weight:700; line-height:1;">Filters</span>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )    
     st.caption("Apply to Overview, Classification, Economics, and Case Explorer tabs.")
 
     min_date = df_raw["filing_date"].min().date()
@@ -135,7 +183,7 @@ def apply_filters(df):
 
 df = apply_filters(df_raw)
 
-st.title("SAR Workflow Dashboard")
+st.title("SAR Sentinel")
 st.caption(
     f"{len(df):,} filings shown (of {len(df_raw):,} total) · "
     f"{df['customer_id'].nunique():,} unique customers · "
