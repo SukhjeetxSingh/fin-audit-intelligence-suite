@@ -107,9 +107,12 @@ The pipeline runs in two stages:
 
 ### Installation
 
+#### 🛠️ Environment Setup & Quickstart
+
+Run this sequential command chain in your terminal to navigate into the project workspace, initialize an isolated virtual environment, activate it, and install all required framework dependencies:
+
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+cd project/starter && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
 
 # Set up environment variables
 cp .env.template .env
