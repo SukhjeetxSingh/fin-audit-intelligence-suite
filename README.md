@@ -111,7 +111,7 @@ The pipeline runs in two stages:
 
 If you are working directly from the repository root directory, execute this single command chain to initialize your isolated virtual environment, activate it, and install all project dependencies:
 ```bash
-python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+python3 -m venv .venv && source .venv/bin/activate && pip install --upgrade -r requirements.txt
 ```
 
 > **_NOTE:_** If your terminal opens outside of the repository's root directory, navigate into your workspace folder by running the sequence below:
