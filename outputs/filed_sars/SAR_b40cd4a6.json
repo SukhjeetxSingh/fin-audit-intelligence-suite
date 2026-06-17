@@ -1,0 +1,38 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_b40cd4a6",
+        "filing_date": "2026-06-16T01:27:35.951893",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Elijah Patton",
+        "customer_id": "CUST_0071",
+        "address": "937 Derek Avenue Suite 596, Scottchester, GU 85833",
+        "customer_since": "2018-07-08",
+        "risk_rating": "High"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "High",
+        "confidence_score": 0.0,
+        "narrative": "",
+        "key_indicators": [],
+        "ai_reasoning": "\n                Audit for the client reveals suspicious activity totaling $28,500.\n                The transaction pattern for the client is consistent with 'smurfing',\n                as identified by deposits structured just below the $10,000 threshold.\n                This activity, observed for the client across multiple branches,\n                shows a clear intent to layer illicit proceeds and avoid reporting.\n                "
+    },
+    "regulatory_compliance": {
+        "citations": [],
+        "narrative_word_count": 0,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "1b7000cc-1a86-40af-80da-b757e0be0770",
+        "processing_date": "2026-06-16T01:27:35.951893",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

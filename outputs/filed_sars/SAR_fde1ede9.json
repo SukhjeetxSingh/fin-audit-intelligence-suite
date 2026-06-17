@@ -1,0 +1,44 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_fde1ede9",
+        "filing_date": "2026-06-15T15:13:57.551645",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Cindy Clayton",
+        "customer_id": "CUST_0057",
+        "address": "08330 Robert Stravenue, Garciaberg, AL 72636",
+        "customer_since": "2020-05-26",
+        "risk_rating": "High"
+    },
+    "suspicious_activity": {
+        "classification": "High Risk",
+        "risk_level": "Level 3",
+        "confidence_score": 0.95,
+        "narrative": "The subject's transaction pattern exhibits high-velocity movement consistent with smurfing.",
+        "key_indicators": [
+            "Structured Deposits",
+            "Rapid Outflow"
+        ],
+        "ai_reasoning": "Automated analysis detected rapid movement of funds across multiple high-risk accounts."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "Bank Secrecy Act (BSA)",
+            "USA PATRIOT Act Section 314(a)"
+        ],
+        "narrative_word_count": 10,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "e358192e-9fd7-4a9e-b666-eded30a665f4",
+        "processing_date": "2026-06-15T15:13:57.551645",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

@@ -1,0 +1,320 @@
+{
+  "selected_high_risk_customers": {
+    "processed": [
+      "CUST_0111",
+      "CUST_0062",
+      "CUST_0057",
+      "CUST_0053",
+      "CUST_0118",
+      "CUST_0129",
+      "CUST_0081",
+      "CUST_0135",
+      "CUST_0143"
+    ],
+    "approved": [
+      "74972423-290e-4108-8310-4b0f934467b1",
+      "af1644d2-d32a-4033-a3b0-7c9fc2e6ee7c",
+      "6bf0d625-5216-4bb2-ba3c-503c61e15daf",
+      "0a72531f-1166-4d81-8bf2-8c00abb5ded3",
+      "cfcc43e2-71fd-4bc2-8a4c-5667c024c5f6",
+      "6d24a78f-a5df-47fb-814c-73e28433a1e3",
+      "ee973d8c-05d5-4f93-a959-be4718d3822e",
+      "4c25e723-abe7-46a3-b2b3-e36e3e8715db",
+      "5616a147-37ff-4d1c-b89c-1bb39c905d4c"
+    ],
+    "rejected": [],
+    "audit_decisions": [
+      {
+        "case_id": "74972423-290e-4108-8310-4b0f934467b1",
+        "customer_id": "CUST_0111",
+        "customer_name": "Jacqueline Rodriguez",
+        "risk_rating": "High",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.91,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "af1644d2-d32a-4033-a3b0-7c9fc2e6ee7c",
+        "customer_id": "CUST_0062",
+        "customer_name": "Michael Stanley",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "6bf0d625-5216-4bb2-ba3c-503c61e15daf",
+        "customer_id": "CUST_0057",
+        "customer_name": "Cindy Clayton",
+        "risk_rating": "High",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "0a72531f-1166-4d81-8bf2-8c00abb5ded3",
+        "customer_id": "CUST_0053",
+        "customer_name": "Tracy Lewis",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.91,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "cfcc43e2-71fd-4bc2-8a4c-5667c024c5f6",
+        "customer_id": "CUST_0118",
+        "customer_name": "Patrick Williams",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "6d24a78f-a5df-47fb-814c-73e28433a1e3",
+        "customer_id": "CUST_0129",
+        "customer_name": "James Willis",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "ee973d8c-05d5-4f93-a959-be4718d3822e",
+        "customer_id": "CUST_0081",
+        "customer_name": "Matthew Alexander",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "4c25e723-abe7-46a3-b2b3-e36e3e8715db",
+        "customer_id": "CUST_0135",
+        "customer_name": "Logan Sullivan",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "5616a147-37ff-4d1c-b89c-1bb39c905d4c",
+        "customer_id": "CUST_0143",
+        "customer_name": "Andre Rodriguez",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      }
+    ]
+  },
+  "other_cases": {
+    "processed": [
+      "CUST_0141",
+      "CUST_0018",
+      "CUST_0105",
+      "CUST_0038",
+      "CUST_0035",
+      "CUST_0095",
+      "CUST_0146",
+      "CUST_0073",
+      "CUST_0090",
+      "CUST_0137",
+      "CUST_0125",
+      "CUST_0009",
+      "CUST_0103",
+      "CUST_0074",
+      "CUST_0027",
+      "CUST_0116"
+    ],
+    "approved": [
+      "c85ca0da-b71d-4057-a72e-b5818875bd9e",
+      "5f864d65-d228-4a7f-89f7-0b516cce0678",
+      "f6291e2b-bb55-40a5-b4fd-f5f9a80039c1",
+      "969c4c6a-368e-42d0-8823-79294b748fc2",
+      "b197b0b4-c7b4-429d-b621-b45ef675e8d0",
+      "0eda332e-e0c0-4e8c-a202-1e2e62571712",
+      "3bac0563-5172-4088-acc7-060ded86b64d",
+      "c51fb740-7573-465b-9688-07a41b989981",
+      "eccc75dd-d910-45c2-a78e-19c144643c2f",
+      "83ef8774-0d8b-4f53-8ced-dd72ce202a94",
+      "d2b2d2c8-6869-40f1-bfbb-642220993022",
+      "86a26017-65b4-4da2-8ea4-5a4b55ba21c4",
+      "939e0654-9e8d-4dfc-9c3e-c6bd2304b457",
+      "d7841466-b17d-4153-8311-7a499c9b3f61",
+      "49e3a2fb-1f79-4ca9-9f4c-a98c35de5fd5",
+      "27ae3e1a-3819-486d-9934-78f5b1d4c10d"
+    ],
+    "rejected": [],
+    "audit_decisions": [
+      {
+        "case_id": "c85ca0da-b71d-4057-a72e-b5818875bd9e",
+        "customer_id": "CUST_0141",
+        "customer_name": "Wayne Malone",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "5f864d65-d228-4a7f-89f7-0b516cce0678",
+        "customer_id": "CUST_0018",
+        "customer_name": "Tanya Johnston",
+        "risk_rating": "High",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.91,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "f6291e2b-bb55-40a5-b4fd-f5f9a80039c1",
+        "customer_id": "CUST_0105",
+        "customer_name": "Steven Howard",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "969c4c6a-368e-42d0-8823-79294b748fc2",
+        "customer_id": "CUST_0038",
+        "customer_name": "Shannon Johnston",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "b197b0b4-c7b4-429d-b621-b45ef675e8d0",
+        "customer_id": "CUST_0035",
+        "customer_name": "Maurice Christensen",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "0eda332e-e0c0-4e8c-a202-1e2e62571712",
+        "customer_id": "CUST_0095",
+        "customer_name": "William Ortiz",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "3bac0563-5172-4088-acc7-060ded86b64d",
+        "customer_id": "CUST_0146",
+        "customer_name": "Steve Wright",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "c51fb740-7573-465b-9688-07a41b989981",
+        "customer_id": "CUST_0073",
+        "customer_name": "Robin Wheeler",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "eccc75dd-d910-45c2-a78e-19c144643c2f",
+        "customer_id": "CUST_0090",
+        "customer_name": "Brandon Reyes",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.91,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "83ef8774-0d8b-4f53-8ced-dd72ce202a94",
+        "customer_id": "CUST_0137",
+        "customer_name": "Regina Ramos",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.91,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "d2b2d2c8-6869-40f1-bfbb-642220993022",
+        "customer_id": "CUST_0125",
+        "customer_name": "Kayla Jackson",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "86a26017-65b4-4da2-8ea4-5a4b55ba21c4",
+        "customer_id": "CUST_0009",
+        "customer_name": "Brandi Bailey",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "939e0654-9e8d-4dfc-9c3e-c6bd2304b457",
+        "customer_id": "CUST_0103",
+        "customer_name": "Lisa Kennedy",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.91,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "d7841466-b17d-4153-8311-7a499c9b3f61",
+        "customer_id": "CUST_0074",
+        "customer_name": "Grant Mueller",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "49e3a2fb-1f79-4ca9-9f4c-a98c35de5fd5",
+        "customer_id": "CUST_0027",
+        "customer_name": "Brian Kirk",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      },
+      {
+        "case_id": "27ae3e1a-3819-486d-9934-78f5b1d4c10d",
+        "customer_id": "CUST_0116",
+        "customer_name": "Lisa Wells",
+        "risk_rating": "Medium",
+        "decision": "PROCEED",
+        "ai_classification": "Other",
+        "ai_confidence": 0.78,
+        "compliance_narrative_exists": true
+      }
+    ]
+  }
+}

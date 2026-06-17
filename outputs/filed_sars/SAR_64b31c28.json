@@ -1,0 +1,38 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_64b31c28",
+        "filing_date": "2026-06-16T01:04:36.724345",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Andre Rodriguez",
+        "customer_id": "CUST_0143",
+        "address": "789 Williams Forges Apt. 037, South Laurieton, MN 73641",
+        "customer_since": "2022-02-09",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "High",
+        "confidence_score": 0.0,
+        "narrative": "",
+        "key_indicators": [],
+        "ai_reasoning": "A 7-day rolling window audit for the client confirms a 'smurfing' pattern. Logs show the client systematically executed deposits just below the $10,000 threshold across various branches to circumvent AML detection. This behavior, marked by rapid fund movement and transfers to third-party accounts, shows clear intent to layer illicit proceeds. Given the lack of legitimate business purpose for these transactions, this case is flagged as high-priority for further regulatory scrutiny."
+    },
+    "regulatory_compliance": {
+        "citations": [],
+        "narrative_word_count": 0,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "70a092ce-0dca-4cca-9cc0-5f94afc1a2de",
+        "processing_date": "2026-06-16T01:04:36.724345",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

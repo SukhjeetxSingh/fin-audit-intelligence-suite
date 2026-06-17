@@ -1,0 +1,41 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_1d76f889",
+        "filing_date": "2026-06-16T17:53:45.754789",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Brian Kirk",
+        "customer_id": "CUST_0027",
+        "address": "2174 Hanson Locks, Port Markside, MS 42006",
+        "customer_since": "2021-10-30",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "High",
+        "confidence_score": 0.78,
+        "narrative": "Unknown Subject (ID: N/A) conducted 0 transaction transactions totaling $0.00 across multiple banking channels between the review period. Activity indicates suspicious activity at 0% confidence (High risk). Key indicators: unusual transaction pattern. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 0 transaction transactions totaling $0.00 for Unknown Subject between the review period. Step 2 [Fact-Pattern Isolation]: Identified unusual transaction pattern. Step 3 [Regulatory Mapping]: Activity consistent with suspicious activity at 0% confidence \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as High. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 49,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "3ebd3d6c-5ac5-4aa2-bb75-6808cd6ac3b9",
+        "processing_date": "2026-06-16T17:53:45.754789",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

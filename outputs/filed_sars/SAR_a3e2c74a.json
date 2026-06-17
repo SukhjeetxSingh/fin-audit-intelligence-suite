@@ -1,0 +1,38 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_a3e2c74a",
+        "filing_date": "2026-06-16T01:27:35.944619",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Matthew Alexander",
+        "customer_id": "CUST_0081",
+        "address": "PSC 9731, Box 1219, APO AP 50836",
+        "customer_since": "2023-03-20",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "High",
+        "confidence_score": 0.0,
+        "narrative": "",
+        "key_indicators": [],
+        "ai_reasoning": "\n                Audit for the client reveals suspicious activity totaling $28,500.\n                The transaction pattern for the client is consistent with 'smurfing',\n                as identified by deposits structured just below the $10,000 threshold.\n                This activity, observed for the client across multiple branches,\n                shows a clear intent to layer illicit proceeds and avoid reporting.\n                "
+    },
+    "regulatory_compliance": {
+        "citations": [],
+        "narrative_word_count": 0,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "d7586669-c0e5-46a1-904b-260f56df28ce",
+        "processing_date": "2026-06-16T01:27:35.944619",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_0cbb6e9e",
+        "filing_date": "2026-06-16T09:05:48.005515",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Michael Stanley",
+        "customer_id": "CUST_0062",
+        "address": "230 Tiffany Mountain Suite 863, South Michael, KY 25205",
+        "customer_since": "2022-04-01",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Money_Laundering",
+        "risk_level": "Critical",
+        "confidence_score": 0.82,
+        "narrative": "Subject conducted multiple transactions inconsistent with known business activity. Transactions lack clear economic purpose and warrant SAR filing per Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High transaction velocity: 90 transactions",
+            "Large aggregate amount: $380,633.78"
+        ],
+        "ai_reasoning": "Step 1-2: High-frequency, high-volume activity. Step 3-5: Layering pattern consistent with money laundering typology."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320"
+        ],
+        "narrative_word_count": 25,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "342b906e-9ffa-4ae4-afe5-20647af178c0",
+        "processing_date": "2026-06-16T09:05:48.005515",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_d0b4b1f0",
+        "filing_date": "2026-06-15T19:55:27.773928",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Lisa Kennedy",
+        "customer_id": "CUST_0103",
+        "address": "460 Derrick Flats Suite 697, West Michelle, HI 11093",
+        "customer_since": "2021-02-10",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Structuring",
+        "risk_level": "High",
+        "confidence_score": 0.88,
+        "narrative": "Subject conducted multiple transactions inconsistent with known business activity. Transactions lack clear economic purpose and warrant SAR filing per Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "2 transactions between $8,000-$9,999",
+            "Possible CTR threshold avoidance"
+        ],
+        "ai_reasoning": "Step 1-2: Multiple near-threshold cash transactions detected. Step 3-5: Pattern consistent with structuring under 31 CFR 1020.320."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320"
+        ],
+        "narrative_word_count": 25,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "1d3aa67f-b125-440f-b997-d65aca2078a9",
+        "processing_date": "2026-06-15T19:55:27.773928",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

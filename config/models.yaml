@@ -1,0 +1,34 @@
+# Agent-specific model assignments (fixed — never changes per user_choice)
+agents:
+  TRIAGE_ANALYST:
+    model: "gpt-3.5-turbo"
+    label: "Fast triage screening"
+    tier: fast
+    
+  RISK_ANALYST:
+    model: "gpt-4o"
+    label: "Deep risk classification"
+    tier: reasoning
+
+  STRUCTURING_EXPERT:
+    model: "gpt-4o"
+    label: "Mid-tier forensic analysis"
+    tier: reasoning
+
+  COMPLIANCE_OFFICER:
+    model: "gpt-4-turbo"
+    label: "High-reasoning SAR narrative"
+    tier: audit
+
+# User-selectable ceiling tiers
+# Agents whose tier > user ceiling get capped to the ceiling model
+tiers:
+  fast:
+    model: "gpt-3.5-turbo"
+    rank: 1
+  reasoning:
+    model: "gpt-4o"
+    rank: 2
+  audit:
+    model: "gpt-4-turbo"
+    rank: 3

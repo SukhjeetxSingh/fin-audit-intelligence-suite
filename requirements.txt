@@ -1,0 +1,26 @@
+# Essential Dependencies for SAR Processing System
+# Students will learn to work with these key libraries
+
+# Data Processing & Validation
+pandas>=2.0.0          # Financial data manipulation
+pydantic>=2.0.0         # Data schemas and validation
+
+# AI & LLM Integration
+openai>=1.0.0          # OpenAI API for AI agents
+
+# Environment Management
+python-dotenv>=1.0.0   # Environment variables
+
+# Development & Testing (Optional)
+jupyter>=1.0.0         # Notebook development
+pytest>=7.0.0          # Unit testing
+
+# Data Visualization (Optional)
+matplotlib>=3.7.0      # Basic plotting
+seaborn>=0.12.0        # Statistical visualization
+
+# Dashboard & Export (added for demo_pipeline3 / app.py)
+streamlit>=1.30.0      # SAR workflow dashboard
+plotly>=5.0.0          # Interactive charts in Streamlit
+pyarrow>=14.0.0        # Parquet export for sar_history
+pyyaml>=6.0.0          # pipeline_config.yaml loading

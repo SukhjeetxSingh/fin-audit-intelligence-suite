@@ -1,0 +1,2005 @@
+{
+  "generated_at": "2026-06-17T10:59:55.673174",
+  "summary": {
+    "total_cases_this_batch": 25,
+    "reviewed": 25,
+    "pending_review": 0,
+    "approved_sars": 25,
+    "rejected": 0,
+    "total_flagged_amount": 4466123.58
+  },
+  "cases": [
+    {
+      "customer_id": "CUST_0111",
+      "customer_name": "Jacqueline Rodriguez",
+      "risk_rating": "High",
+      "occupation": "Conservation officer, historic buildings",
+      "annual_income": 306379,
+      "total_amount": 386834.91,
+      "transaction_count": 121,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": true,
+      "top_transactions": [
+        {
+          "transaction_id": "RAPID_DEF84D17",
+          "account_id": "CUST_0111_ACC_1",
+          "transaction_date": "2025-07-29",
+          "transaction_type": "Wire_Transfer_Credit",
+          "amount": 76517.25,
+          "description": "Incoming wire transfer",
+          "counterparty": "Price-Dominguez",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_076C6CE8",
+          "account_id": "CUST_0111_ACC_1",
+          "transaction_date": "2025-07-31",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 14019.62,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Terry-Rogers",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_D2151EED",
+          "account_id": "CUST_0111_ACC_1",
+          "transaction_date": "2025-07-31",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 13901.49,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Anderson-Reed",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_8500C5D8",
+          "account_id": "CUST_0111_ACC_1",
+          "transaction_date": "2025-07-30",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 12689.7,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Tran-Burns",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_1EB57A34",
+          "account_id": "CUST_0111_ACC_1",
+          "transaction_date": "2025-07-30",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 8906.7,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Nash, Mueller and Russell",
+          "location": "",
+          "method": "Wire"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "74972423-290e-4108-8310-4b0f934467b1",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.91,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0062",
+      "customer_name": "Michael Stanley",
+      "risk_rating": "Medium",
+      "occupation": "Operational investment banker",
+      "annual_income": 128868,
+      "total_amount": 380633.78,
+      "transaction_count": 90,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": true,
+      "top_transactions": [
+        {
+          "transaction_id": "RAPID_00758F79",
+          "account_id": "CUST_0062_ACC_1",
+          "transaction_date": "2025-07-27",
+          "transaction_type": "Wire_Transfer_Credit",
+          "amount": 98090.16,
+          "description": "Incoming wire transfer",
+          "counterparty": "Sharp Ltd",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_25AEEED4",
+          "account_id": "CUST_0062_ACC_1",
+          "transaction_date": "2025-07-28",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 24082.6,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Brown and Sons",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_C00DDBD9",
+          "account_id": "CUST_0062_ACC_1",
+          "transaction_date": "2025-07-29",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 18835.61,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Marks, Hartman and Rodriguez",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_285F4834",
+          "account_id": "CUST_0062_ACC_1",
+          "transaction_date": "2025-07-29",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 17747.14,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Berg-Williamson",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_4BDB20AC",
+          "account_id": "CUST_0062_ACC_1",
+          "transaction_date": "2025-07-29",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 10516.73,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Aguilar Group",
+          "location": "",
+          "method": "Wire"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "af1644d2-d32a-4033-a3b0-7c9fc2e6ee7c",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0057",
+      "customer_name": "Cindy Clayton",
+      "risk_rating": "High",
+      "occupation": "Applications developer",
+      "annual_income": 163820,
+      "total_amount": 286342.62,
+      "transaction_count": 101,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "GEO_41DB416E",
+          "account_id": "CUST_0057_ACC_1",
+          "transaction_date": "2025-07-31",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 7491.44,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_AC1EC201",
+          "account_id": "CUST_0057_ACC_1",
+          "transaction_date": "2025-08-02",
+          "transaction_type": "Cash_Deposit",
+          "amount": 6933.66,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_33653B27",
+          "account_id": "CUST_0057_ACC_1",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 5774.15,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Northgate_Mall",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_F4BFE383",
+          "account_id": "CUST_0057_ACC_1",
+          "transaction_date": "2025-07-31",
+          "transaction_type": "Cash_Deposit",
+          "amount": 5500.55,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Northgate_Mall",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_858F6C4A",
+          "account_id": "CUST_0057_ACC_1",
+          "transaction_date": "2025-07-31",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 5100.37,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "ATM"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "6bf0d625-5216-4bb2-ba3c-503c61e15daf",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0053",
+      "customer_name": "Tracy Lewis",
+      "risk_rating": "Medium",
+      "occupation": "Nurse, mental health",
+      "annual_income": 131925,
+      "total_amount": 274025.18,
+      "transaction_count": 94,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "STRUCT_0D6F062B",
+          "account_id": "CUST_0053_ACC_3",
+          "transaction_date": "2025-07-29",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9915.61,
+          "description": "Cash deposit",
+          "counterparty": "",
+          "location": "Branch_Southpark_Ave",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_A0A2C46C",
+          "account_id": "CUST_0053_ACC_3",
+          "transaction_date": "2025-07-30",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9864.52,
+          "description": "Cash deposit - business receipts",
+          "counterparty": "",
+          "location": "Branch_Southpark_Ave",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_95419F9D",
+          "account_id": "CUST_0053_ACC_3",
+          "transaction_date": "2025-07-31",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9786.92,
+          "description": "Business cash deposit",
+          "counterparty": "",
+          "location": "Branch_Westside_Plaza",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_62D8F11B",
+          "account_id": "CUST_0053_ACC_3",
+          "transaction_date": "2025-07-28",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9716.77,
+          "description": "Business cash deposit",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_8A0DA70A",
+          "account_id": "CUST_0053_ACC_3",
+          "transaction_date": "2025-07-27",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9602.08,
+          "description": "Daily cash receipts",
+          "counterparty": "",
+          "location": "Branch_Northgate_Mall",
+          "method": "Cash"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "0a72531f-1166-4d81-8bf2-8c00abb5ded3",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.91,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0118",
+      "customer_name": "Patrick Williams",
+      "risk_rating": "Medium",
+      "occupation": "Midwife",
+      "annual_income": 104667,
+      "total_amount": 222070.26,
+      "transaction_count": 79,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "GEO_1BDCA71D",
+          "account_id": "CUST_0118_ACC_3",
+          "transaction_date": "2025-08-02",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 7762.48,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_48D2A513",
+          "account_id": "CUST_0118_ACC_3",
+          "transaction_date": "2025-08-03",
+          "transaction_type": "Cash_Deposit",
+          "amount": 7212.8,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_F0112C86",
+          "account_id": "CUST_0118_ACC_3",
+          "transaction_date": "2025-08-02",
+          "transaction_type": "Cash_Deposit",
+          "amount": 6477.95,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Westside_Plaza",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_0D618AAF",
+          "account_id": "CUST_0118_ACC_3",
+          "transaction_date": "2025-08-02",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 5863.5,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_901FE29A",
+          "account_id": "CUST_0118_ACC_3",
+          "transaction_date": "2025-08-04",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 5062.56,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "ATM"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "cfcc43e2-71fd-4bc2-8a4c-5667c024c5f6",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0129",
+      "customer_name": "James Willis",
+      "risk_rating": "Medium",
+      "occupation": "Scientific laboratory technician",
+      "annual_income": 170114,
+      "total_amount": 216693.67,
+      "transaction_count": 79,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "GEO_A17787F9",
+          "account_id": "CUST_0129_ACC_2",
+          "transaction_date": "2025-08-02",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 7252.18,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Financial_District",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_0161D2BB",
+          "account_id": "CUST_0129_ACC_2",
+          "transaction_date": "2025-08-04",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 5543.61,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Southpark_Ave",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_5FB7E5A9",
+          "account_id": "CUST_0129_ACC_2",
+          "transaction_date": "2025-06-20",
+          "transaction_type": "ACH_Debit",
+          "amount": 4886.32,
+          "description": "Education payment",
+          "counterparty": "",
+          "location": "",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_BC7D97D4",
+          "account_id": "CUST_0129_ACC_2",
+          "transaction_date": "2025-02-10",
+          "transaction_type": "Online_Transfer",
+          "amount": 4825.01,
+          "description": "Bill payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Branch"
+        },
+        {
+          "transaction_id": "TXN_13208645",
+          "account_id": "CUST_0129_ACC_2",
+          "transaction_date": "2025-05-08",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 4647.39,
+          "description": "Grocery purchase",
+          "counterparty": "Clark and Sons",
+          "location": "",
+          "method": "ATM"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "6d24a78f-a5df-47fb-814c-73e28433a1e3",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0081",
+      "customer_name": "Matthew Alexander",
+      "risk_rating": "Medium",
+      "occupation": "Illustrator",
+      "annual_income": 175593,
+      "total_amount": 216693.16,
+      "transaction_count": 60,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "LARGE_51BB3A76",
+          "account_id": "CUST_0081_ACC_1",
+          "transaction_date": "2025-07-28",
+          "transaction_type": "Cash_Withdrawal",
+          "amount": 38496.38,
+          "description": "Large cash deposit",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "LARGE_6298465B",
+          "account_id": "CUST_0081_ACC_1",
+          "transaction_date": "2025-07-06",
+          "transaction_type": "Cash_Withdrawal",
+          "amount": 23794.18,
+          "description": "Cash withdrawal - business needs",
+          "counterparty": "",
+          "location": "Branch_Southpark_Ave",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "LARGE_B5595C9B",
+          "account_id": "CUST_0081_ACC_1",
+          "transaction_date": "2025-07-23",
+          "transaction_type": "Cash_Deposit",
+          "amount": 15927.38,
+          "description": "Cash withdrawal - business needs",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "TXN_41B273FB",
+          "account_id": "CUST_0081_ACC_2",
+          "transaction_date": "2025-03-06",
+          "transaction_type": "Direct_Deposit",
+          "amount": 4947.52,
+          "description": "Investment transfer",
+          "counterparty": "Jones Group",
+          "location": "Branch_Suburban_Center",
+          "method": "Electronic"
+        },
+        {
+          "transaction_id": "TXN_53A40B7A",
+          "account_id": "CUST_0081_ACC_1",
+          "transaction_date": "2025-02-13",
+          "transaction_type": "Check_Deposit",
+          "amount": 4901.6,
+          "description": "ATM withdrawal",
+          "counterparty": "Lyons PLC",
+          "location": "",
+          "method": "Electronic"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "ee973d8c-05d5-4f93-a959-be4718d3822e",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0135",
+      "customer_name": "Logan Sullivan",
+      "risk_rating": "Medium",
+      "occupation": "Public librarian",
+      "annual_income": 178272,
+      "total_amount": 182852.9,
+      "transaction_count": 76,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "TXN_1F6EABA3",
+          "account_id": "CUST_0135_ACC_1",
+          "transaction_date": "2025-07-30",
+          "transaction_type": "ACH_Debit",
+          "amount": 4804.42,
+          "description": "Medical payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        },
+        {
+          "transaction_id": "TXN_0D81850A",
+          "account_id": "CUST_0135_ACC_3",
+          "transaction_date": "2025-05-28",
+          "transaction_type": "Check_Deposit",
+          "amount": 4701.62,
+          "description": "Medical payment",
+          "counterparty": "",
+          "location": "",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_DBB4CFA9",
+          "account_id": "CUST_0135_ACC_1",
+          "transaction_date": "2025-06-03",
+          "transaction_type": "ACH_Debit",
+          "amount": 4644.69,
+          "description": "Auto loan payment",
+          "counterparty": "",
+          "location": "",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_D8593B2A",
+          "account_id": "CUST_0135_ACC_1",
+          "transaction_date": "2025-05-07",
+          "transaction_type": "Wire_Transfer",
+          "amount": 4627.95,
+          "description": "Online purchase",
+          "counterparty": "",
+          "location": "",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_E60B8410",
+          "account_id": "CUST_0135_ACC_1",
+          "transaction_date": "2025-04-05",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 4509.53,
+          "description": "Mortgage payment",
+          "counterparty": "Baker, Casey and Simmons",
+          "location": "",
+          "method": "Online"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "4c25e723-abe7-46a3-b2b3-e36e3e8715db",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0143",
+      "customer_name": "Andre Rodriguez",
+      "risk_rating": "Medium",
+      "occupation": "Ship broker",
+      "annual_income": 62318,
+      "total_amount": 171150.38,
+      "transaction_count": 68,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "GEO_5470684E",
+          "account_id": "CUST_0143_ACC_1",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 7954.85,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Westside_Plaza",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_A5644312",
+          "account_id": "CUST_0143_ACC_1",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "Cash_Deposit",
+          "amount": 7032.6,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Westside_Plaza",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_ABDF63CD",
+          "account_id": "CUST_0143_ACC_1",
+          "transaction_date": "2025-08-02",
+          "transaction_type": "Cash_Deposit",
+          "amount": 5836.49,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Westside_Plaza",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_25C0C0F7",
+          "account_id": "CUST_0143_ACC_1",
+          "transaction_date": "2025-03-30",
+          "transaction_type": "Check_Deposit",
+          "amount": 4830.78,
+          "description": "ATM withdrawal",
+          "counterparty": "Adkins, Duncan and Thompson",
+          "location": "",
+          "method": "Electronic"
+        },
+        {
+          "transaction_id": "TXN_1F21920F",
+          "account_id": "CUST_0143_ACC_1",
+          "transaction_date": "2025-03-27",
+          "transaction_type": "ACH_Debit",
+          "amount": 4767.24,
+          "description": "ATM withdrawal",
+          "counterparty": "Simmons, Graham and Miller",
+          "location": "",
+          "method": "Electronic"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "5616a147-37ff-4d1c-b89c-1bb39c905d4c",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0141",
+      "customer_name": "Wayne Malone",
+      "risk_rating": "Medium",
+      "occupation": "Designer, fashion/clothing",
+      "annual_income": 92717,
+      "total_amount": 153127.31,
+      "transaction_count": 62,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "TXN_51E2650F",
+          "account_id": "CUST_0141_ACC_2",
+          "transaction_date": "2025-02-07",
+          "transaction_type": "ACH_Debit",
+          "amount": 4928.56,
+          "description": "Mortgage payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        },
+        {
+          "transaction_id": "TXN_53D0BA64",
+          "account_id": "CUST_0141_ACC_2",
+          "transaction_date": "2025-05-30",
+          "transaction_type": "Wire_Transfer",
+          "amount": 4899.35,
+          "description": "Mortgage payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Online"
+        },
+        {
+          "transaction_id": "TXN_5934D532",
+          "account_id": "CUST_0141_ACC_2",
+          "transaction_date": "2025-07-11",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 4774.8,
+          "description": "Insurance payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        },
+        {
+          "transaction_id": "TXN_628802F0",
+          "account_id": "CUST_0141_ACC_2",
+          "transaction_date": "2025-05-14",
+          "transaction_type": "ACH_Credit",
+          "amount": 4709.7,
+          "description": "Bill payment",
+          "counterparty": "Brooks, Jackson and Stuart",
+          "location": "",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_7DD6308B",
+          "account_id": "CUST_0141_ACC_2",
+          "transaction_date": "2025-06-21",
+          "transaction_type": "Check_Deposit",
+          "amount": 4705.7,
+          "description": "ATM withdrawal",
+          "counterparty": "Hernandez, Fuentes and Johnson",
+          "location": "",
+          "method": "Electronic"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "c85ca0da-b71d-4057-a72e-b5818875bd9e",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0018",
+      "customer_name": "Tanya Johnston",
+      "risk_rating": "High",
+      "occupation": "Therapist, drama",
+      "annual_income": 166876,
+      "total_amount": 150758.53,
+      "transaction_count": 54,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "STRUCT_90A1DB11",
+          "account_id": "CUST_0018_ACC_2",
+          "transaction_date": "2025-07-22",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9576.59,
+          "description": "Cash deposit - daily sales",
+          "counterparty": "",
+          "location": "Branch_Westside_Plaza",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_5B9F1B67",
+          "account_id": "CUST_0018_ACC_2",
+          "transaction_date": "2025-07-23",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9530.63,
+          "description": "Cash deposit - business receipts",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_31B07C13",
+          "account_id": "CUST_0018_ACC_2",
+          "transaction_date": "2025-07-24",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9274.89,
+          "description": "Daily cash receipts",
+          "counterparty": "",
+          "location": "Branch_Westside_Plaza",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_187631B6",
+          "account_id": "CUST_0018_ACC_2",
+          "transaction_date": "2025-07-25",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9154.34,
+          "description": "Cash deposit - daily sales",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "TXN_A33F7D4C",
+          "account_id": "CUST_0018_ACC_1",
+          "transaction_date": "2025-04-04",
+          "transaction_type": "Check_Deposit",
+          "amount": 4815.78,
+          "description": "Medical payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "5f864d65-d228-4a7f-89f7-0b516cce0678",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.91,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0105",
+      "customer_name": "Steven Howard",
+      "risk_rating": "Medium",
+      "occupation": "Engineer, land",
+      "annual_income": 110415,
+      "total_amount": 138409.41,
+      "transaction_count": 52,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "GEO_0101DC7A",
+          "account_id": "CUST_0105_ACC_1",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 7249.79,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Airport_Terminal",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_B94B5C37",
+          "account_id": "CUST_0105_ACC_1",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "Cash_Deposit",
+          "amount": 7049.03,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Airport_Terminal",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_DE6DC6B3",
+          "account_id": "CUST_0105_ACC_1",
+          "transaction_date": "2025-07-31",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 6869.96,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Suburban_Center",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_87DEEEAE",
+          "account_id": "CUST_0105_ACC_1",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "Cash_Deposit",
+          "amount": 4947.67,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Suburban_Center",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_C016F947",
+          "account_id": "CUST_0105_ACC_2",
+          "transaction_date": "2025-06-08",
+          "transaction_type": "Check_Deposit",
+          "amount": 4845.85,
+          "description": "Rent payment",
+          "counterparty": "Aguilar LLC",
+          "location": "",
+          "method": "Branch"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "f6291e2b-bb55-40a5-b4fd-f5f9a80039c1",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0038",
+      "customer_name": "Shannon Johnston",
+      "risk_rating": "Medium",
+      "occupation": "Designer, ceramics/pottery",
+      "annual_income": 154343,
+      "total_amount": 135876.8,
+      "transaction_count": 54,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "GEO_F1530004",
+          "account_id": "CUST_0038_ACC_1",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "Cash_Deposit",
+          "amount": 7404.03,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_5B8FDBBE",
+          "account_id": "CUST_0038_ACC_1",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 5968.45,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Financial_District",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_5A466436",
+          "account_id": "CUST_0038_ACC_1",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "Cash_Deposit",
+          "amount": 4832.67,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Financial_District",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_B484EEB3",
+          "account_id": "CUST_0038_ACC_1",
+          "transaction_date": "2025-06-11",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 4800.65,
+          "description": "Grocery purchase",
+          "counterparty": "",
+          "location": "",
+          "method": "Electronic"
+        },
+        {
+          "transaction_id": "TXN_FDC51CBD",
+          "account_id": "CUST_0038_ACC_1",
+          "transaction_date": "2025-07-04",
+          "transaction_type": "ACH_Credit",
+          "amount": 4724.16,
+          "description": "Insurance payment",
+          "counterparty": "",
+          "location": "",
+          "method": "ATM"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "969c4c6a-368e-42d0-8823-79294b748fc2",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0035",
+      "customer_name": "Maurice Christensen",
+      "risk_rating": "Medium",
+      "occupation": "Geologist, engineering",
+      "annual_income": 123358,
+      "total_amount": 129261.54,
+      "transaction_count": 69,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "TXN_0DF17027",
+          "account_id": "CUST_0035_ACC_1",
+          "transaction_date": "2025-03-18",
+          "transaction_type": "ACH_Debit",
+          "amount": 4944.44,
+          "description": "Insurance payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Branch"
+        },
+        {
+          "transaction_id": "TXN_B43C3CDD",
+          "account_id": "CUST_0035_ACC_1",
+          "transaction_date": "2025-04-29",
+          "transaction_type": "Direct_Deposit",
+          "amount": 4864.11,
+          "description": "Online purchase",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        },
+        {
+          "transaction_id": "TXN_F3901E54",
+          "account_id": "CUST_0035_ACC_1",
+          "transaction_date": "2025-07-17",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 4472.26,
+          "description": "Utility bill",
+          "counterparty": "",
+          "location": "Branch_Westside_Plaza",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_858D845C",
+          "account_id": "CUST_0035_ACC_1",
+          "transaction_date": "2025-06-21",
+          "transaction_type": "Online_Transfer",
+          "amount": 4248.9,
+          "description": "Salary deposit",
+          "counterparty": "Mccormick-Hill",
+          "location": "",
+          "method": "Online"
+        },
+        {
+          "transaction_id": "TXN_6E174DE9",
+          "account_id": "CUST_0035_ACC_1",
+          "transaction_date": "2025-02-14",
+          "transaction_type": "ACH_Debit",
+          "amount": 4196.82,
+          "description": "Credit card payment",
+          "counterparty": "Guzman-Li",
+          "location": "",
+          "method": "ATM"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "b197b0b4-c7b4-429d-b621-b45ef675e8d0",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0095",
+      "customer_name": "William Ortiz",
+      "risk_rating": "Medium",
+      "occupation": "Merchant navy officer",
+      "annual_income": 155257,
+      "total_amount": 124904.84,
+      "transaction_count": 64,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "TXN_CCE63BC7",
+          "account_id": "CUST_0095_ACC_1",
+          "transaction_date": "2025-03-22",
+          "transaction_type": "ACH_Credit",
+          "amount": 4751.58,
+          "description": "Rent payment",
+          "counterparty": "Jackson Inc",
+          "location": "",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_D2FDAA5F",
+          "account_id": "CUST_0095_ACC_1",
+          "transaction_date": "2025-07-01",
+          "transaction_type": "Online_Transfer",
+          "amount": 4681.33,
+          "description": "Utility bill",
+          "counterparty": "",
+          "location": "",
+          "method": "Electronic"
+        },
+        {
+          "transaction_id": "TXN_CC5B4752",
+          "account_id": "CUST_0095_ACC_1",
+          "transaction_date": "2025-03-26",
+          "transaction_type": "Direct_Deposit",
+          "amount": 4414.11,
+          "description": "Grocery purchase",
+          "counterparty": "",
+          "location": "",
+          "method": "Branch"
+        },
+        {
+          "transaction_id": "TXN_DBC23A67",
+          "account_id": "CUST_0095_ACC_1",
+          "transaction_date": "2025-05-17",
+          "transaction_type": "ACH_Credit",
+          "amount": 4362.27,
+          "description": "Grocery purchase",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "Branch"
+        },
+        {
+          "transaction_id": "TXN_204D1993",
+          "account_id": "CUST_0095_ACC_1",
+          "transaction_date": "2025-07-11",
+          "transaction_type": "Check_Deposit",
+          "amount": 4231.8,
+          "description": "Online purchase",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "0eda332e-e0c0-4e8c-a202-1e2e62571712",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0146",
+      "customer_name": "Steve Wright",
+      "risk_rating": "Medium",
+      "occupation": "Environmental consultant",
+      "annual_income": 190283,
+      "total_amount": 121301.48,
+      "transaction_count": 61,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "TXN_B9EB3F48",
+          "account_id": "CUST_0146_ACC_2",
+          "transaction_date": "2025-07-22",
+          "transaction_type": "Debit_Purchase",
+          "amount": 4786.96,
+          "description": "Mortgage payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Electronic"
+        },
+        {
+          "transaction_id": "TXN_1981C747",
+          "account_id": "CUST_0146_ACC_2",
+          "transaction_date": "2025-02-14",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 4624.89,
+          "description": "ATM withdrawal",
+          "counterparty": "",
+          "location": "Branch_Financial_District",
+          "method": "Online"
+        },
+        {
+          "transaction_id": "TXN_62BE5E0A",
+          "account_id": "CUST_0146_ACC_2",
+          "transaction_date": "2025-04-13",
+          "transaction_type": "Online_Transfer",
+          "amount": 4429.34,
+          "description": "Investment transfer",
+          "counterparty": "Wilson, Walker and Fuller",
+          "location": "",
+          "method": "Online"
+        },
+        {
+          "transaction_id": "TXN_223F6174",
+          "account_id": "CUST_0146_ACC_2",
+          "transaction_date": "2025-04-02",
+          "transaction_type": "ACH_Debit",
+          "amount": 4301.13,
+          "description": "Rent payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Branch"
+        },
+        {
+          "transaction_id": "TXN_79E045A9",
+          "account_id": "CUST_0146_ACC_2",
+          "transaction_date": "2025-02-13",
+          "transaction_type": "Check_Deposit",
+          "amount": 4226.45,
+          "description": "Bill payment",
+          "counterparty": "Hernandez-Carter",
+          "location": "",
+          "method": "Branch"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "3bac0563-5172-4088-acc7-060ded86b64d",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0073",
+      "customer_name": "Robin Wheeler",
+      "risk_rating": "Medium",
+      "occupation": "Curator",
+      "annual_income": 90696,
+      "total_amount": 103933.42,
+      "transaction_count": 56,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts",
+        "high_frequency"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "TXN_32036E3A",
+          "account_id": "CUST_0073_ACC_1",
+          "transaction_date": "2025-07-12",
+          "transaction_type": "Online_Transfer",
+          "amount": 4671.35,
+          "description": "Credit card payment",
+          "counterparty": "Bowen-Ortiz",
+          "location": "Branch_Westside_Plaza",
+          "method": "Branch"
+        },
+        {
+          "transaction_id": "TXN_EE652A0F",
+          "account_id": "CUST_0073_ACC_2",
+          "transaction_date": "2025-06-29",
+          "transaction_type": "Direct_Deposit",
+          "amount": 4568.71,
+          "description": "Gas station",
+          "counterparty": "",
+          "location": "",
+          "method": "Branch"
+        },
+        {
+          "transaction_id": "TXN_23B329E7",
+          "account_id": "CUST_0073_ACC_2",
+          "transaction_date": "2025-02-13",
+          "transaction_type": "Online_Transfer",
+          "amount": 4472.71,
+          "description": "Insurance payment",
+          "counterparty": "",
+          "location": "Branch_Financial_District",
+          "method": "Online"
+        },
+        {
+          "transaction_id": "TXN_0CDD5293",
+          "account_id": "CUST_0073_ACC_1",
+          "transaction_date": "2025-03-17",
+          "transaction_type": "Wire_Transfer",
+          "amount": 4336.73,
+          "description": "Investment transfer",
+          "counterparty": "Bowman LLC",
+          "location": "Branch_Financial_District",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_CDFA935E",
+          "account_id": "CUST_0073_ACC_1",
+          "transaction_date": "2025-04-02",
+          "transaction_type": "ACH_Credit",
+          "amount": 4289.11,
+          "description": "Medical payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "c51fb740-7573-465b-9688-07a41b989981",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0090",
+      "customer_name": "Brandon Reyes",
+      "risk_rating": "Medium",
+      "occupation": "Banker",
+      "annual_income": 54731,
+      "total_amount": 153932.03,
+      "transaction_count": 43,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "STRUCT_397291A2",
+          "account_id": "CUST_0090_ACC_1",
+          "transaction_date": "2025-07-19",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9904.62,
+          "description": "Cash deposit - business receipts",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_211119CB",
+          "account_id": "CUST_0090_ACC_1",
+          "transaction_date": "2025-07-22",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9779.57,
+          "description": "Daily cash receipts",
+          "counterparty": "",
+          "location": "Branch_Airport_Terminal",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_F0F6BEA1",
+          "account_id": "CUST_0090_ACC_1",
+          "transaction_date": "2025-07-20",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9220.11,
+          "description": "Daily cash receipts",
+          "counterparty": "",
+          "location": "Branch_Suburban_Center",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_7E5A9A02",
+          "account_id": "CUST_0090_ACC_1",
+          "transaction_date": "2025-07-21",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9203.33,
+          "description": "Business cash deposit",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "TXN_1A0FDDD8",
+          "account_id": "CUST_0090_ACC_1",
+          "transaction_date": "2025-07-30",
+          "transaction_type": "ACH_Debit",
+          "amount": 4960.06,
+          "description": "Auto loan payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Electronic"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "eccc75dd-d910-45c2-a78e-19c144643c2f",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.91,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0137",
+      "customer_name": "Regina Ramos",
+      "risk_rating": "Medium",
+      "occupation": "Cartographer",
+      "annual_income": 129672,
+      "total_amount": 144448.68,
+      "transaction_count": 49,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "STRUCT_FF5B179C",
+          "account_id": "CUST_0137_ACC_1",
+          "transaction_date": "2025-07-26",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9547.22,
+          "description": "Cash deposit",
+          "counterparty": "",
+          "location": "Branch_Financial_District",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_B6FA44C9",
+          "account_id": "CUST_0137_ACC_1",
+          "transaction_date": "2025-07-25",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9402.73,
+          "description": "Daily cash receipts",
+          "counterparty": "",
+          "location": "Branch_Financial_District",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "STRUCT_7D3B8E94",
+          "account_id": "CUST_0137_ACC_1",
+          "transaction_date": "2025-07-24",
+          "transaction_type": "Cash_Deposit",
+          "amount": 9168.52,
+          "description": "Cash deposit - business receipts",
+          "counterparty": "",
+          "location": "Branch_Southpark_Ave",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "TXN_74F85BE6",
+          "account_id": "CUST_0137_ACC_1",
+          "transaction_date": "2025-06-03",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 4884.45,
+          "description": "Auto loan payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        },
+        {
+          "transaction_id": "TXN_43BA42A6",
+          "account_id": "CUST_0137_ACC_1",
+          "transaction_date": "2025-06-01",
+          "transaction_type": "Check_Deposit",
+          "amount": 4864.88,
+          "description": "Bill payment",
+          "counterparty": "Short-Weaver",
+          "location": "",
+          "method": "Online"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "83ef8774-0d8b-4f53-8ced-dd72ce202a94",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.91,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0125",
+      "customer_name": "Kayla Jackson",
+      "risk_rating": "Medium",
+      "occupation": "Armed forces logistics/support/administrative officer",
+      "annual_income": 58685,
+      "total_amount": 141547.49,
+      "transaction_count": 14,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "LARGE_6C693C2C",
+          "account_id": "CUST_0125_ACC_1",
+          "transaction_date": "2025-07-10",
+          "transaction_type": "Cash_Withdrawal",
+          "amount": 45005.48,
+          "description": "Large cash transaction",
+          "counterparty": "",
+          "location": "Branch_Southpark_Ave",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "LARGE_E4465180",
+          "account_id": "CUST_0125_ACC_1",
+          "transaction_date": "2025-07-18",
+          "transaction_type": "Cash_Withdrawal",
+          "amount": 41648.14,
+          "description": "Large cash transaction",
+          "counterparty": "",
+          "location": "Branch_Airport_Terminal",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "LARGE_90CED463",
+          "account_id": "CUST_0125_ACC_1",
+          "transaction_date": "2025-07-05",
+          "transaction_type": "Cash_Withdrawal",
+          "amount": 22711.44,
+          "description": "Business cash deposit",
+          "counterparty": "",
+          "location": "Branch_University_District",
+          "method": "Cash"
+        },
+        {
+          "transaction_id": "TXN_2506484C",
+          "account_id": "CUST_0125_ACC_1",
+          "transaction_date": "2025-05-14",
+          "transaction_type": "Debit_Purchase",
+          "amount": 4231.24,
+          "description": "Insurance payment",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "Electronic"
+        },
+        {
+          "transaction_id": "TXN_28021291",
+          "account_id": "CUST_0125_ACC_1",
+          "transaction_date": "2025-03-13",
+          "transaction_type": "ACH_Credit",
+          "amount": 3924.38,
+          "description": "Rent payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Branch"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "d2b2d2c8-6869-40f1-bfbb-642220993022",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0009",
+      "customer_name": "Brandi Bailey",
+      "risk_rating": "Medium",
+      "occupation": "Arts development officer",
+      "annual_income": 89675,
+      "total_amount": 135063.49,
+      "transaction_count": 38,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts"
+      ],
+      "has_rapid_wire_activity": true,
+      "top_transactions": [
+        {
+          "transaction_id": "RAPID_7980B1C0",
+          "account_id": "CUST_0009_ACC_2",
+          "transaction_date": "2025-08-01",
+          "transaction_type": "Wire_Transfer_Credit",
+          "amount": 33120.73,
+          "description": "Incoming wire transfer",
+          "counterparty": "Miller-Cole",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_A0976190",
+          "account_id": "CUST_0009_ACC_2",
+          "transaction_date": "2025-08-03",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 11041.86,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Maxwell Inc",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "TXN_04511AB4",
+          "account_id": "CUST_0009_ACC_1",
+          "transaction_date": "2025-04-10",
+          "transaction_type": "ACH_Debit",
+          "amount": 4993.52,
+          "description": "Auto loan payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Online"
+        },
+        {
+          "transaction_id": "TXN_8F3CE659",
+          "account_id": "CUST_0009_ACC_1",
+          "transaction_date": "2025-07-18",
+          "transaction_type": "Check_Deposit",
+          "amount": 4612.72,
+          "description": "Mortgage payment",
+          "counterparty": "Robbins-Herman",
+          "location": "",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_CB36EDBF",
+          "account_id": "CUST_0009_ACC_1",
+          "transaction_date": "2025-06-03",
+          "transaction_type": "Check_Deposit",
+          "amount": 4513.09,
+          "description": "Bill payment",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "ATM"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "86a26017-65b4-4da2-8ea4-5a4b55ba21c4",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0103",
+      "customer_name": "Lisa Kennedy",
+      "risk_rating": "Medium",
+      "occupation": "Pilot, airline",
+      "annual_income": 117356,
+      "total_amount": 130663.34000000001,
+      "transaction_count": 5,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts"
+      ],
+      "has_rapid_wire_activity": true,
+      "top_transactions": [
+        {
+          "transaction_id": "RAPID_084D094E",
+          "account_id": "CUST_0103_ACC_1",
+          "transaction_date": "2025-07-27",
+          "transaction_type": "Wire_Transfer_Credit",
+          "amount": 72235.46,
+          "description": "Incoming wire transfer",
+          "counterparty": "Morgan-Nelson",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_EF886AF8",
+          "account_id": "CUST_0103_ACC_1",
+          "transaction_date": "2025-07-28",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 30236.26,
+          "description": "Outgoing wire transfer",
+          "counterparty": "James-Conway",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_C0AA1DAC",
+          "account_id": "CUST_0103_ACC_1",
+          "transaction_date": "2025-07-29",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 11706.43,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Wiggins PLC",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_2B7C990B",
+          "account_id": "CUST_0103_ACC_1",
+          "transaction_date": "2025-07-29",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 8400.83,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Ellis, Miller and Arnold",
+          "location": "",
+          "method": "Wire"
+        },
+        {
+          "transaction_id": "RAPID_93299C1A",
+          "account_id": "CUST_0103_ACC_1",
+          "transaction_date": "2025-07-28",
+          "transaction_type": "Wire_Transfer_Debit",
+          "amount": 8084.36,
+          "description": "Outgoing wire transfer",
+          "counterparty": "Navarro Inc",
+          "location": "",
+          "method": "Wire"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "939e0654-9e8d-4dfc-9c3e-c6bd2304b457",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.91,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0074",
+      "customer_name": "Grant Mueller",
+      "risk_rating": "Medium",
+      "occupation": "Visual merchandiser",
+      "annual_income": 71438,
+      "total_amount": 127687.94,
+      "transaction_count": 44,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "GEO_657A6870",
+          "account_id": "CUST_0074_ACC_3",
+          "transaction_date": "2025-08-02",
+          "transaction_type": "Cash_Deposit",
+          "amount": 7577.57,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_31ADEFAC",
+          "account_id": "CUST_0074_ACC_3",
+          "transaction_date": "2025-07-31",
+          "transaction_type": "ATM_Withdrawal",
+          "amount": 7544.7,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Eastside_Center",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_46E62B1D",
+          "account_id": "CUST_0074_ACC_3",
+          "transaction_date": "2025-07-31",
+          "transaction_type": "Cash_Deposit",
+          "amount": 7126.11,
+          "description": "ATM transaction - deposit",
+          "counterparty": "",
+          "location": "Branch_Downtown_Main",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "GEO_BF573C04",
+          "account_id": "CUST_0074_ACC_3",
+          "transaction_date": "2025-08-02",
+          "transaction_type": "Cash_Deposit",
+          "amount": 6292.36,
+          "description": "ATM transaction - withdrawal",
+          "counterparty": "",
+          "location": "Branch_Northgate_Mall",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_5562484C",
+          "account_id": "CUST_0074_ACC_2",
+          "transaction_date": "2025-03-19",
+          "transaction_type": "ACH_Debit",
+          "amount": 4418.74,
+          "description": "Grocery purchase",
+          "counterparty": "",
+          "location": "",
+          "method": "Electronic"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "d7841466-b17d-4153-8311-7a499c9b3f61",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0027",
+      "customer_name": "Brian Kirk",
+      "risk_rating": "Medium",
+      "occupation": "Air cabin crew",
+      "annual_income": 197440,
+      "total_amount": 120360.14,
+      "transaction_count": 46,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "TXN_B0408208",
+          "account_id": "CUST_0027_ACC_1",
+          "transaction_date": "2025-02-24",
+          "transaction_type": "Online_Transfer",
+          "amount": 4955.83,
+          "description": "Mortgage payment",
+          "counterparty": "Williams-Turner",
+          "location": "",
+          "method": "Mobile"
+        },
+        {
+          "transaction_id": "TXN_09065ACC",
+          "account_id": "CUST_0027_ACC_1",
+          "transaction_date": "2025-06-19",
+          "transaction_type": "Wire_Transfer",
+          "amount": 4815.29,
+          "description": "Education payment",
+          "counterparty": "",
+          "location": "",
+          "method": "Online"
+        },
+        {
+          "transaction_id": "TXN_852B075E",
+          "account_id": "CUST_0027_ACC_1",
+          "transaction_date": "2025-02-23",
+          "transaction_type": "Online_Transfer",
+          "amount": 4720.7,
+          "description": "ATM withdrawal",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        },
+        {
+          "transaction_id": "TXN_B0BD73BF",
+          "account_id": "CUST_0027_ACC_1",
+          "transaction_date": "2025-03-04",
+          "transaction_type": "Check_Deposit",
+          "amount": 4709.53,
+          "description": "Insurance payment",
+          "counterparty": "Moore and Sons",
+          "location": "Branch_Eastside_Center",
+          "method": "Online"
+        },
+        {
+          "transaction_id": "TXN_141927AB",
+          "account_id": "CUST_0027_ACC_1",
+          "transaction_date": "2025-02-22",
+          "transaction_type": "ACH_Debit",
+          "amount": 4624.38,
+          "description": "Auto loan payment",
+          "counterparty": "",
+          "location": "Branch_Airport_Terminal",
+          "method": "Electronic"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "49e3a2fb-1f79-4ca9-9f4c-a98c35de5fd5",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    },
+    {
+      "customer_id": "CUST_0116",
+      "customer_name": "Lisa Wells",
+      "risk_rating": "Medium",
+      "occupation": "Engineer, production",
+      "annual_income": 115319,
+      "total_amount": 117550.28,
+      "transaction_count": 43,
+      "risk_flags": [
+        "high_risk_rating",
+        "large_amounts"
+      ],
+      "has_rapid_wire_activity": false,
+      "top_transactions": [
+        {
+          "transaction_id": "TXN_35275C60",
+          "account_id": "CUST_0116_ACC_2",
+          "transaction_date": "2025-07-18",
+          "transaction_type": "Direct_Deposit",
+          "amount": 4921.05,
+          "description": "Salary deposit",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        },
+        {
+          "transaction_id": "TXN_5A69D054",
+          "account_id": "CUST_0116_ACC_2",
+          "transaction_date": "2025-03-31",
+          "transaction_type": "Wire_Transfer",
+          "amount": 4864.93,
+          "description": "ATM withdrawal",
+          "counterparty": "",
+          "location": "",
+          "method": "ATM"
+        },
+        {
+          "transaction_id": "TXN_43E32B84",
+          "account_id": "CUST_0116_ACC_2",
+          "transaction_date": "2025-04-24",
+          "transaction_type": "ACH_Debit",
+          "amount": 4827.99,
+          "description": "Insurance payment",
+          "counterparty": "Hart-Day",
+          "location": "",
+          "method": "Electronic"
+        },
+        {
+          "transaction_id": "TXN_D492856E",
+          "account_id": "CUST_0116_ACC_2",
+          "transaction_date": "2025-04-16",
+          "transaction_type": "Online_Transfer",
+          "amount": 4799.87,
+          "description": "Online purchase",
+          "counterparty": "",
+          "location": "",
+          "method": "Mobile"
+        },
+        {
+          "transaction_id": "TXN_997B9561",
+          "account_id": "CUST_0116_ACC_2",
+          "transaction_date": "2025-05-31",
+          "transaction_type": "Wire_Transfer",
+          "amount": 4792.66,
+          "description": "Insurance payment",
+          "counterparty": "",
+          "location": "",
+          "method": "ATM"
+        }
+      ],
+      "status": "reviewed",
+      "case_id": "27ae3e1a-3819-486d-9934-78f5b1d4c10d",
+      "decision": "PROCEED",
+      "ai_classification": "Other",
+      "ai_confidence": 0.78,
+      "compliance_narrative_exists": true,
+      "is_approved_sar": true,
+      "is_rejected": false
+    }
+  ]
+}

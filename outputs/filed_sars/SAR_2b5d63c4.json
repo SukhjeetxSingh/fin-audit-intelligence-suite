@@ -1,0 +1,43 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_2b5d63c4",
+        "filing_date": "2026-06-15T21:18:52.116421",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Matthew Alexander",
+        "customer_id": "CUST_0081",
+        "address": "PSC 9731, Box 1219, APO AP 50836",
+        "customer_since": "2023-03-20",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Money_Laundering",
+        "risk_level": "Critical",
+        "confidence_score": 0.82,
+        "narrative": "Subject conducted multiple transactions inconsistent with known business activity. Transactions lack clear economic purpose and warrant SAR filing per Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High transaction velocity: 60 transactions",
+            "Large aggregate amount: $216,693.16"
+        ],
+        "ai_reasoning": "Step 1-2: High-frequency, high-volume activity. Step 3-5: Layering pattern consistent with money laundering typology."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320"
+        ],
+        "narrative_word_count": 25,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "0f424de9-dd57-4fc2-89ec-b58fd497a0ce",
+        "processing_date": "2026-06-15T21:18:52.116421",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_49fc76d6",
+        "filing_date": "2026-06-15T06:00:25.403625",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Michael Stanley",
+        "customer_id": "CUST_0062",
+        "address": "230 Tiffany Mountain Suite 863, South Michael, KY 25205",
+        "customer_since": "2022-04-01",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Money_Laundering",
+        "risk_level": "Critical",
+        "confidence_score": 0.82,
+        "narrative": "Michael Stanley (ID: CUST_0062) conducted 90 Check_Deposit, Wire_Transfer, Online_Transfer, Wire_Transfer_Debit, ATM_Withdrawal, Debit_Purchase, ACH_Credit, ACH_Debit, Wire_Transfer_Credit, Direct_Deposit transactions totaling $380,633.78 across Branch_Financial_District, Branch_Southpark_Ave between 2025-02-03 to 2025-08-01. The activity indicates money laundering with 82% confidence. Key indicators include High transaction velocity: 90 transactions, Large aggregate amount: $380,633.78. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act (BSA), 31 CFR 1020.320.",
+        "key_indicators": [
+            "High transaction velocity: 90 transactions",
+            "Large aggregate amount: $380,633.78"
+        ],
+        "ai_reasoning": "Step 1-2: High-frequency, high-volume activity. Step 3-5: Layering pattern consistent with money laundering typology."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 64,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "0cc241e5-b0e6-487b-98b4-347562d1bade",
+        "processing_date": "2026-06-15T06:00:25.403625",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

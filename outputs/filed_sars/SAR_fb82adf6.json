@@ -1,0 +1,44 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_fb82adf6",
+        "filing_date": "2026-06-16T00:47:54.712666",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Jacqueline Rodriguez",
+        "customer_id": "CUST_0111",
+        "address": "49331 Lewis Views Apt. 516, Lake Maryshire, DE 59549",
+        "customer_since": "2022-02-27",
+        "risk_rating": "High"
+    },
+    "suspicious_activity": {
+        "classification": "High Risk",
+        "risk_level": "Level 3",
+        "confidence_score": 0.95,
+        "narrative": "The subject's transaction pattern exhibits high-velocity movement consistent with smurfing.",
+        "key_indicators": [
+            "Structured Deposits",
+            "Rapid Outflow"
+        ],
+        "ai_reasoning": "Automated analysis detected rapid movement of funds across multiple high-risk accounts."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "Bank Secrecy Act (BSA)",
+            "USA PATRIOT Act Section 314(a)"
+        ],
+        "narrative_word_count": 10,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "c5321b43-3276-4503-be7d-25d136f1db4c",
+        "processing_date": "2026-06-16T00:47:54.712666",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

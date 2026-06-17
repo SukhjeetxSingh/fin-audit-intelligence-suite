@@ -1,0 +1,44 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_b9cc0948",
+        "filing_date": "2026-06-15T15:12:46.911107",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Patrick Williams",
+        "customer_id": "CUST_0118",
+        "address": "PSC 1449, Box 1476, APO AA 87103",
+        "customer_since": "2021-09-05",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "High Risk",
+        "risk_level": "Level 3",
+        "confidence_score": 0.95,
+        "narrative": "The subject's transaction pattern exhibits high-velocity movement consistent with smurfing.",
+        "key_indicators": [
+            "Structured Deposits",
+            "Rapid Outflow"
+        ],
+        "ai_reasoning": "Automated analysis detected rapid movement of funds across multiple high-risk accounts."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "Bank Secrecy Act (BSA)",
+            "USA PATRIOT Act Section 314(a)"
+        ],
+        "narrative_word_count": 10,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "1d997a29-a8b3-4116-9593-07354721a9c1",
+        "processing_date": "2026-06-15T15:12:46.911107",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

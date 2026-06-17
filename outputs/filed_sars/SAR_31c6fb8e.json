@@ -1,0 +1,38 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_31c6fb8e",
+        "filing_date": "2026-06-16T01:27:35.946969",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Logan Sullivan",
+        "customer_id": "CUST_0135",
+        "address": "5449 Nelson Mills, Juliehaven, NV 54763",
+        "customer_since": "2016-06-11",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "High",
+        "confidence_score": 0.0,
+        "narrative": "",
+        "key_indicators": [],
+        "ai_reasoning": "\n                Audit for the client reveals suspicious activity totaling $28,500.\n                The transaction pattern for the client is consistent with 'smurfing',\n                as identified by deposits structured just below the $10,000 threshold.\n                This activity, observed for the client across multiple branches,\n                shows a clear intent to layer illicit proceeds and avoid reporting.\n                "
+    },
+    "regulatory_compliance": {
+        "citations": [],
+        "narrative_word_count": 0,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "11fe2bf2-078f-4bb3-ba8c-be1621c65a8f",
+        "processing_date": "2026-06-16T01:27:35.946969",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

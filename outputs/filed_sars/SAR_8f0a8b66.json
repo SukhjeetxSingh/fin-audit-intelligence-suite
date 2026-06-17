@@ -1,0 +1,38 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_8f0a8b66",
+        "filing_date": "2026-06-16T01:32:41.686598",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Andre Rodriguez",
+        "customer_id": "CUST_0143",
+        "address": "789 Williams Forges Apt. 037, South Laurieton, MN 73641",
+        "customer_since": "2022-02-09",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "High",
+        "confidence_score": 0.0,
+        "narrative": "",
+        "key_indicators": [],
+        "ai_reasoning": "Audit for the client reveals suspicious activity totaling $28,500. The transaction pattern for the client is consistent with 'smurfing', as identified by deposits structured just below the $10,000 threshold. This activity, observed for the client across multiple branches, shows a clear intent to layer illicit proceeds and avoid reporting."
+    },
+    "regulatory_compliance": {
+        "citations": [],
+        "narrative_word_count": 0,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "8e642ca3-8dfb-42d5-998b-9b0a47b40339",
+        "processing_date": "2026-06-16T01:32:41.686598",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

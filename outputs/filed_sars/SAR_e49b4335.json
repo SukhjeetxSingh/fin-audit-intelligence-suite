@@ -1,0 +1,38 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_e49b4335",
+        "filing_date": "2026-06-16T01:32:41.669918",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Michael Stanley",
+        "customer_id": "CUST_0062",
+        "address": "230 Tiffany Mountain Suite 863, South Michael, KY 25205",
+        "customer_since": "2022-04-01",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "High",
+        "confidence_score": 0.0,
+        "narrative": "",
+        "key_indicators": [],
+        "ai_reasoning": "Audit for the client reveals suspicious activity totaling $28,500. The transaction pattern for the client is consistent with 'smurfing', as identified by deposits structured just below the $10,000 threshold. This activity, observed for the client across multiple branches, shows a clear intent to layer illicit proceeds and avoid reporting."
+    },
+    "regulatory_compliance": {
+        "citations": [],
+        "narrative_word_count": 0,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "75c67b05-a415-4806-a4c6-8d9c3689c20e",
+        "processing_date": "2026-06-16T01:32:41.669918",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}
