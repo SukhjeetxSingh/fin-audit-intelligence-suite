@@ -109,10 +109,18 @@ The pipeline runs in two stages:
 
 #### 🛠️ Environment Setup & Quickstart
 
-Run this sequential command chain in your terminal to navigate into the project workspace, initialize an isolated virtual environment, activate it, and install all required framework dependencies:
-
+If you are working directly from the repository root directory, execute this single command chain to initialize your isolated virtual environment, activate it, and install all project dependencies:
 ```bash
-cd project/starter && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+```
+
+> **_NOTE:_** If your terminal opens outside of the repository's root directory, navigate into your workspace folder by running the sequence below:
+```
+cd fin-audit-intelligence-suite && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+```
+> **_NOTE:_** If your terminal opens outside of the repository's root directory, navigate into your workspace folder by running the sequence below:
+> Make sure to replace `fin-audit-intelligence-suite` with your actual `YOUR_ROOT_DIRECTORY_NAME` if your repository folder is named differently.
+
 
 # Set up environment variables
 cp .env.template .env
