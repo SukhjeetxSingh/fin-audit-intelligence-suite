@@ -12,20 +12,20 @@
       "CUST_0143"
     ],
     "approved": [
-      "74972423-290e-4108-8310-4b0f934467b1",
-      "af1644d2-d32a-4033-a3b0-7c9fc2e6ee7c",
-      "6bf0d625-5216-4bb2-ba3c-503c61e15daf",
-      "0a72531f-1166-4d81-8bf2-8c00abb5ded3",
-      "cfcc43e2-71fd-4bc2-8a4c-5667c024c5f6",
-      "6d24a78f-a5df-47fb-814c-73e28433a1e3",
-      "ee973d8c-05d5-4f93-a959-be4718d3822e",
-      "4c25e723-abe7-46a3-b2b3-e36e3e8715db",
-      "5616a147-37ff-4d1c-b89c-1bb39c905d4c"
+      "c3ab0ca8-43e3-4425-9d1c-bb99bc16905b",
+      "3ffddbd2-a0b3-4396-8d52-6fdda1cdfd79",
+      "9575aa14-964a-451d-a941-43a71ba1097d",
+      "3cf56856-9a11-4912-9415-2f1bb9753ebf",
+      "d786ff7c-3054-4e96-8bf5-2a3b5b60ad05",
+      "4147bd12-90db-4978-88aa-265fc51437c3",
+      "b9a6201f-0fb1-4761-a4f7-e1b7aa519b30",
+      "e647a221-e9c4-4740-a9cf-52668bf7e0e0",
+      "cb86fb89-330e-4ab3-a11d-5c6b26ad9f14"
     ],
     "rejected": [],
     "audit_decisions": [
       {
-        "case_id": "74972423-290e-4108-8310-4b0f934467b1",
+        "case_id": "c3ab0ca8-43e3-4425-9d1c-bb99bc16905b",
         "customer_id": "CUST_0111",
         "customer_name": "Jacqueline Rodriguez",
         "risk_rating": "High",
@@ -35,7 +35,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "af1644d2-d32a-4033-a3b0-7c9fc2e6ee7c",
+        "case_id": "3ffddbd2-a0b3-4396-8d52-6fdda1cdfd79",
         "customer_id": "CUST_0062",
         "customer_name": "Michael Stanley",
         "risk_rating": "Medium",
@@ -45,7 +45,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "6bf0d625-5216-4bb2-ba3c-503c61e15daf",
+        "case_id": "9575aa14-964a-451d-a941-43a71ba1097d",
         "customer_id": "CUST_0057",
         "customer_name": "Cindy Clayton",
         "risk_rating": "High",
@@ -55,7 +55,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "0a72531f-1166-4d81-8bf2-8c00abb5ded3",
+        "case_id": "3cf56856-9a11-4912-9415-2f1bb9753ebf",
         "customer_id": "CUST_0053",
         "customer_name": "Tracy Lewis",
         "risk_rating": "Medium",
@@ -65,7 +65,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "cfcc43e2-71fd-4bc2-8a4c-5667c024c5f6",
+        "case_id": "d786ff7c-3054-4e96-8bf5-2a3b5b60ad05",
         "customer_id": "CUST_0118",
         "customer_name": "Patrick Williams",
         "risk_rating": "Medium",
@@ -75,7 +75,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "6d24a78f-a5df-47fb-814c-73e28433a1e3",
+        "case_id": "4147bd12-90db-4978-88aa-265fc51437c3",
         "customer_id": "CUST_0129",
         "customer_name": "James Willis",
         "risk_rating": "Medium",
@@ -85,7 +85,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "ee973d8c-05d5-4f93-a959-be4718d3822e",
+        "case_id": "b9a6201f-0fb1-4761-a4f7-e1b7aa519b30",
         "customer_id": "CUST_0081",
         "customer_name": "Matthew Alexander",
         "risk_rating": "Medium",
@@ -95,7 +95,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "4c25e723-abe7-46a3-b2b3-e36e3e8715db",
+        "case_id": "e647a221-e9c4-4740-a9cf-52668bf7e0e0",
         "customer_id": "CUST_0135",
         "customer_name": "Logan Sullivan",
         "risk_rating": "Medium",
@@ -105,7 +105,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "5616a147-37ff-4d1c-b89c-1bb39c905d4c",
+        "case_id": "cb86fb89-330e-4ab3-a11d-5c6b26ad9f14",
         "customer_id": "CUST_0143",
         "customer_name": "Andre Rodriguez",
         "risk_rating": "Medium",
@@ -136,27 +136,27 @@
       "CUST_0116"
     ],
     "approved": [
-      "c85ca0da-b71d-4057-a72e-b5818875bd9e",
-      "5f864d65-d228-4a7f-89f7-0b516cce0678",
-      "f6291e2b-bb55-40a5-b4fd-f5f9a80039c1",
-      "969c4c6a-368e-42d0-8823-79294b748fc2",
-      "b197b0b4-c7b4-429d-b621-b45ef675e8d0",
-      "0eda332e-e0c0-4e8c-a202-1e2e62571712",
-      "3bac0563-5172-4088-acc7-060ded86b64d",
-      "c51fb740-7573-465b-9688-07a41b989981",
-      "eccc75dd-d910-45c2-a78e-19c144643c2f",
-      "83ef8774-0d8b-4f53-8ced-dd72ce202a94",
-      "d2b2d2c8-6869-40f1-bfbb-642220993022",
-      "86a26017-65b4-4da2-8ea4-5a4b55ba21c4",
-      "939e0654-9e8d-4dfc-9c3e-c6bd2304b457",
-      "d7841466-b17d-4153-8311-7a499c9b3f61",
-      "49e3a2fb-1f79-4ca9-9f4c-a98c35de5fd5",
-      "27ae3e1a-3819-486d-9934-78f5b1d4c10d"
+      "66fe833c-fa25-4b75-8044-07185d83f1aa",
+      "3498ac50-e914-4fc6-9a34-afe13b1f45ac",
+      "12bd2a3b-c799-48ef-8ebd-1004ddb518bc",
+      "89ca9647-0493-4077-8684-a2737d8f365a",
+      "334b77f1-191f-42ba-863f-9ac0e0eddc7b",
+      "18aaea1a-f79d-444b-8a31-c409ebea9a3b",
+      "b6cde240-cc67-4a8b-accc-a60b5ff5ba7b",
+      "3e1e75ba-f807-4262-8b15-4b470b3f6bff",
+      "d9e2bbb9-b4a2-46cf-a33e-8ab87e8eb817",
+      "0a023b0b-ccbd-4703-b051-bb9890757f26",
+      "a3353ff9-fbcb-4e53-a885-b6fe34e1699d",
+      "a01a42bb-0dca-492f-8f6d-41c76a8ce6a2",
+      "607d10e9-33d5-43ac-95f2-740ee2198374",
+      "7c3ee3c8-ef5e-40d8-b225-cc2ceefb66f9",
+      "c990ed9e-a949-4fdf-9ef6-e5aa694c722e",
+      "7dc76d0c-cb4b-4553-9868-1902bfa04caf"
     ],
     "rejected": [],
     "audit_decisions": [
       {
-        "case_id": "c85ca0da-b71d-4057-a72e-b5818875bd9e",
+        "case_id": "66fe833c-fa25-4b75-8044-07185d83f1aa",
         "customer_id": "CUST_0141",
         "customer_name": "Wayne Malone",
         "risk_rating": "Medium",
@@ -166,7 +166,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "5f864d65-d228-4a7f-89f7-0b516cce0678",
+        "case_id": "3498ac50-e914-4fc6-9a34-afe13b1f45ac",
         "customer_id": "CUST_0018",
         "customer_name": "Tanya Johnston",
         "risk_rating": "High",
@@ -176,7 +176,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "f6291e2b-bb55-40a5-b4fd-f5f9a80039c1",
+        "case_id": "12bd2a3b-c799-48ef-8ebd-1004ddb518bc",
         "customer_id": "CUST_0105",
         "customer_name": "Steven Howard",
         "risk_rating": "Medium",
@@ -186,7 +186,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "969c4c6a-368e-42d0-8823-79294b748fc2",
+        "case_id": "89ca9647-0493-4077-8684-a2737d8f365a",
         "customer_id": "CUST_0038",
         "customer_name": "Shannon Johnston",
         "risk_rating": "Medium",
@@ -196,7 +196,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "b197b0b4-c7b4-429d-b621-b45ef675e8d0",
+        "case_id": "334b77f1-191f-42ba-863f-9ac0e0eddc7b",
         "customer_id": "CUST_0035",
         "customer_name": "Maurice Christensen",
         "risk_rating": "Medium",
@@ -206,7 +206,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "0eda332e-e0c0-4e8c-a202-1e2e62571712",
+        "case_id": "18aaea1a-f79d-444b-8a31-c409ebea9a3b",
         "customer_id": "CUST_0095",
         "customer_name": "William Ortiz",
         "risk_rating": "Medium",
@@ -216,7 +216,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "3bac0563-5172-4088-acc7-060ded86b64d",
+        "case_id": "b6cde240-cc67-4a8b-accc-a60b5ff5ba7b",
         "customer_id": "CUST_0146",
         "customer_name": "Steve Wright",
         "risk_rating": "Medium",
@@ -226,7 +226,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "c51fb740-7573-465b-9688-07a41b989981",
+        "case_id": "3e1e75ba-f807-4262-8b15-4b470b3f6bff",
         "customer_id": "CUST_0073",
         "customer_name": "Robin Wheeler",
         "risk_rating": "Medium",
@@ -236,7 +236,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "eccc75dd-d910-45c2-a78e-19c144643c2f",
+        "case_id": "d9e2bbb9-b4a2-46cf-a33e-8ab87e8eb817",
         "customer_id": "CUST_0090",
         "customer_name": "Brandon Reyes",
         "risk_rating": "Medium",
@@ -246,7 +246,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "83ef8774-0d8b-4f53-8ced-dd72ce202a94",
+        "case_id": "0a023b0b-ccbd-4703-b051-bb9890757f26",
         "customer_id": "CUST_0137",
         "customer_name": "Regina Ramos",
         "risk_rating": "Medium",
@@ -256,7 +256,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "d2b2d2c8-6869-40f1-bfbb-642220993022",
+        "case_id": "a3353ff9-fbcb-4e53-a885-b6fe34e1699d",
         "customer_id": "CUST_0125",
         "customer_name": "Kayla Jackson",
         "risk_rating": "Medium",
@@ -266,7 +266,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "86a26017-65b4-4da2-8ea4-5a4b55ba21c4",
+        "case_id": "a01a42bb-0dca-492f-8f6d-41c76a8ce6a2",
         "customer_id": "CUST_0009",
         "customer_name": "Brandi Bailey",
         "risk_rating": "Medium",
@@ -276,7 +276,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "939e0654-9e8d-4dfc-9c3e-c6bd2304b457",
+        "case_id": "607d10e9-33d5-43ac-95f2-740ee2198374",
         "customer_id": "CUST_0103",
         "customer_name": "Lisa Kennedy",
         "risk_rating": "Medium",
@@ -286,7 +286,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "d7841466-b17d-4153-8311-7a499c9b3f61",
+        "case_id": "7c3ee3c8-ef5e-40d8-b225-cc2ceefb66f9",
         "customer_id": "CUST_0074",
         "customer_name": "Grant Mueller",
         "risk_rating": "Medium",
@@ -296,7 +296,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "49e3a2fb-1f79-4ca9-9f4c-a98c35de5fd5",
+        "case_id": "c990ed9e-a949-4fdf-9ef6-e5aa694c722e",
         "customer_id": "CUST_0027",
         "customer_name": "Brian Kirk",
         "risk_rating": "Medium",
@@ -306,7 +306,7 @@
         "compliance_narrative_exists": true
       },
       {
-        "case_id": "27ae3e1a-3819-486d-9934-78f5b1d4c10d",
+        "case_id": "7dc76d0c-cb4b-4553-9868-1902bfa04caf",
         "customer_id": "CUST_0116",
         "customer_name": "Lisa Wells",
         "risk_rating": "Medium",
