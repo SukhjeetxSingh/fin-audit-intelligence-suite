@@ -165,7 +165,7 @@ with tab_overview:
 
         col_a, col_b = st.columns([2, 1])
         with col_a:
-            timeline = df.set_index("filing_date").resample("3H").size().reset_index(name="filings")
+            timeline = df.set_index("filing_date").resample("3h").size().reset_index(name="filings")
             fig = px.line(timeline, x="filing_date", y="filings", markers=True,
                           title="Filing Volume Over Time (3-hour buckets)")
             fig.update_layout(margin=dict(l=10, r=10, t=40, b=10))
