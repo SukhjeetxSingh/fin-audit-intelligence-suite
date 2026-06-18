@@ -1,0 +1,46 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_ef89f6f3",
+        "filing_date": "2026-06-18T10:40:15.873440",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Kayla Jackson",
+        "customer_id": "CUST_0125",
+        "address": "66210 Alexandra Parkways, Serranoville, HI 62874",
+        "customer_since": "2018-12-01",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "Medium",
+        "confidence_score": 0.78,
+        "narrative": "Kayla Jackson (ID: CUST_0125) conducted 14 transactions totaling $141,547.49 between the review period. Activity indicates suspicious activity at Medium risk. Key indicators: High aggregate volume: $141,547.49, Transaction count: 14. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High aggregate volume: $141,547.49",
+            "Transaction count: 14",
+            "Velocity anomaly detected within review window",
+            "High aggregate volume: $141,547.49"
+        ],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 14 transactions totaling $141,547.49 for Kayla Jackson. Step 2 [Fact-Pattern Isolation]: Identified High aggregate volume: $141,547.49, Transaction count: 14. Step 3 [Regulatory Mapping]: Activity consistent with suspicious activity \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as Medium. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 46,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "30fd1807-a25c-4ad3-a1fd-869aeccf051e",
+        "processing_date": "2026-06-18T10:40:15.873440",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

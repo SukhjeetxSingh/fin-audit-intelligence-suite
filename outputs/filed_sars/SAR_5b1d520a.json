@@ -1,0 +1,47 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_5b1d520a",
+        "filing_date": "2026-06-18T10:40:12.963546",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Maurice Christensen",
+        "customer_id": "CUST_0035",
+        "address": "Unit 9451 Box 9832, DPO AP 63702",
+        "customer_since": "2021-01-23",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "Medium",
+        "confidence_score": 0.78,
+        "narrative": "Maurice Christensen (ID: CUST_0035) conducted 69 transactions totaling $129,261.54 between the review period. Activity indicates suspicious activity at Medium risk. Key indicators: High aggregate volume: $129,261.54, Transaction count: 69. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High aggregate volume: $129,261.54",
+            "Transaction count: 69",
+            "Velocity anomaly detected within review window",
+            "High aggregate volume: $129,261.54",
+            "Transaction count: 69"
+        ],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 69 transactions totaling $129,261.54 for Maurice Christensen. Step 2 [Fact-Pattern Isolation]: Identified High aggregate volume: $129,261.54, Transaction count: 69. Step 3 [Regulatory Mapping]: Activity consistent with suspicious activity \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as Medium. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 46,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "615e57d4-ac68-4154-aa00-708c865c5119",
+        "processing_date": "2026-06-18T10:40:12.963546",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

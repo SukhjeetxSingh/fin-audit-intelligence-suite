@@ -1,3 +1,4 @@
+# file : project/starter/src/foundation_sar.py
 # Foundation SAR - Core Data Schemas and Utilities
 # TODO: Implement core Pydantic schemas and data processing utilities
 
@@ -26,13 +27,65 @@ YOUR TASKS:
 
 import json
 import yaml
+import math  # <----------
 import pandas as pd
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from typing import Dict, List, Optional, Any, Literal
 from pydantic import BaseModel, Field, field_validator
 import uuid
 import os
+import logging  # <----------
+from typing import Any # <----------
+
+logger = logging.getLogger(__name__)  # <----------
+
 from pydantic import BaseModel, ConfigDict, Field, field_validator
+
+# CHANGED: Added shared helpers for NaN detection and date validation
+
+def _is_nan_like(value: Any) -> bool:
+    """Return True if value is a NaN-like sentinel (None, float('nan'), 'nan')."""
+    if value is None:
+        return True
+    try:
+        if isinstance(value, float) and math.isnan(value):
+            return True
+    except TypeError:
+        pass
+    if str(value).strip().lower() == "nan":
+        return True
+    return False
+
+def _validate_date_string(v: Any) -> str:
+    """Coerce v to an ISO date string (YYYY-MM-DD) or raise ValueError."""
+    if _is_nan_like(v):
+        raise ValueError("Date value is missing or NaN.")
+    s = str(v).strip()
+
+    # CHANGED: Accept pandas Timestamp directly
+    if hasattr(v, "strftime"):
+        return v.strftime("%Y-%m-%d")
+
+    # CHANGED: Try ISO then a few common formats
+    try:
+        parsed = datetime.strptime(s, "%Y-%m-%d")
+    except ValueError:
+        for fmt in ("%m/%d/%Y", "%d-%m-%Y", "%Y/%m/%d"):
+            try:
+                parsed = datetime.strptime(s, fmt)
+                break
+            except ValueError:
+                continue
+        else:
+            raise ValueError(f"Invalid date format '{s}'. Expected YYYY-MM-DD.")
+
+    today = date.today()
+    # CHANGED: Guard against impossible or future dates
+    if parsed.year < 1900 or parsed.date() > today:
+        raise ValueError(
+            f"Date '{s}' is out of plausible range (1900–{today.isoformat()})."
+        )
+    return parsed.strftime("%Y-%m-%d")
 
 # ===== TODO: IMPLEMENT PYDANTIC SCHEMAS =====
 
@@ -44,19 +97,69 @@ class CustomerData(BaseModel):
     and that the risk rating adheres to allowed enumeration values.
     """
     model_config = ConfigDict(from_attributes=True)
-    # TODO: Implement the CustomerData schema with proper fields and validation
-    customer_id: str = Field(..., description='Unique identifier like "CUST_0001"')
-    name: str = Field(..., description='Full customer name like "John Smith"')
+
+    customer_id: str = Field(..., description='Unique identifier like "CUST0001"')
+    name: str = Field(..., min_length=1, description='Full customer name like "John Smith"')
     date_of_birth: str = Field(..., description='Date in YYYY-MM-DD format like "1985-03-15"')
     ssn_last_4: str = Field(..., description='Last 4 digits like "1234"')
-    address: str = Field(..., description='Full address like "123 Main St, City, ST 12345"')
+    address: str = Field(..., min_length=1, description='Full address like "123 Main St, City, ST 12345"')
     customer_since: str = Field(..., description='Date in YYYY-MM-DD format like "2010-01-15"')
     risk_rating: Literal['Low', 'Medium', 'High'] = Field(..., description='Risk assessment')
-    
+
     phone: Optional[str] = Field(None, description='Phone number like "555-123-4567"')
     occupation: Optional[str] = Field(None, description='Job title like "Software Engineer"')
-    annual_income: Optional[int] = Field(None, description='Yearly income like 75000')
+    annual_income: Optional[float] = Field(
+        None,
+        ge=0,
+        le=10_000_000,
+        description='Yearly income like 75000'
+    )
 
+        # CHANGED: Coerce int/NaN ssn_last_4 from CSV to 4-digit string
+    @field_validator("ssn_last_4", mode="before")
+    @classmethod
+    def coerce_ssn(cls, v: Any) -> str:
+        if _is_nan_like(v):
+            return ""
+        s = str(v).strip()
+        # Drop trailing .0 from pandas ints
+        if "." in s:
+            s = s.split(".")[0]
+        if not s.isdigit():
+            raise ValueError(f"Invalid ssn_last_4 '{s}' – must be digits.")
+        return s.zfill(4)[:4]
+
+    # CHANGED: Enforce valid date string for date_of_birth
+    @field_validator("date_of_birth", mode="before")
+    @classmethod
+    def validate_dob(cls, v: Any) -> str:
+        return _validate_date_string(v)
+
+    # CHANGED: Enforce valid date string for customer_since
+    @field_validator("customer_since", mode="before")
+    @classmethod
+    def validate_customer_since(cls, v: Any) -> str:
+        return _validate_date_string(v)
+
+    # CHANGED: Coerce annual_income and handle NaN as None
+    @field_validator("annual_income", mode="before")
+    @classmethod
+    def coerce_annual_income(cls, v: Any) -> Optional[float]:
+        if _is_nan_like(v):
+            return None
+        try:
+            return float(str(v))
+        except (TypeError, ValueError):
+            return None
+
+    # CHANGED: Normalise Optional string fields (NaN/blank → None)
+    @field_validator("phone", "occupation", mode="before")
+    @classmethod
+    def coerce_optional_str(cls, v: Any) -> Optional[str]:
+        if _is_nan_like(v):
+            return None
+        s = str(v).strip()
+        return s or None
 
 class AccountData(BaseModel):
     """
@@ -74,6 +177,36 @@ class AccountData(BaseModel):
     current_balance: float = Field(..., description="Current balance (can be negative)")
     average_monthly_balance: float = Field(..., description="Average balance")
     status: str = Field(..., description="Status like Active, Closed")
+
+    # CHANGED: Enforce valid opening_date
+    @field_validator("opening_date", mode="before")
+    @classmethod
+    def validate_opening_date(cls, v: Any) -> str:
+        return _validate_date_string(v)
+
+    # CHANGED: Coerce balances and enforce plausible range
+    @field_validator("current_balance", "average_monthly_balance", mode="before")
+    @classmethod
+    def coerce_balance(cls, v: Any) -> float:
+        if _is_nan_like(v):
+            raise ValueError("Balance value is missing or NaN.")
+        try:
+            val = float(str(v))
+        except (TypeError, ValueError):
+            raise ValueError(f"Balance '{v}' is not a valid number.")
+        if not (-10_000_000 <= val <= 100_000_000):
+            raise ValueError(
+                f"Balance {val} is outside the allowed range [-10,000,000 … 100,000,000]."
+            )
+        return val
+
+    # CHANGED: Ensure IDs are non-empty strings
+    @field_validator("account_id", "customer_id", mode="before")
+    @classmethod
+    def coerce_id_str(cls, v: Any) -> str:
+        if _is_nan_like(v):
+            raise ValueError("ID field must not be missing.")
+        return str(v).strip()
 
 class TransactionData(BaseModel):
     """
@@ -93,6 +226,55 @@ class TransactionData(BaseModel):
     method: str = Field(..., description="Method like Wire, ACH")
     counterparty: Optional[str] = Field(None, description="Other party in transaction")
     location: Optional[str] = Field(None, description="Transaction location or branch")
+
+        # CHANGED: Enforce valid transaction date
+    @field_validator("transaction_date", mode="before")
+    @classmethod
+    def validate_transaction_date(cls, v: Any) -> str:
+        return _validate_date_string(v)
+
+    # CHANGED: Enforce amount range and reject NaN
+    @field_validator("amount", mode="before")
+    @classmethod
+    def validate_amount(cls, v: Any) -> float:
+        if _is_nan_like(v):
+            raise ValueError("Transaction amount is missing or NaN.")
+        try:
+            val = float(str(v))
+        except (TypeError, ValueError):
+            raise ValueError(f"Amount '{v}' is not a valid number.")
+        if not (-1_000_000_000 <= val <= 1_000_000_000):
+            raise ValueError(
+                f"Amount {val} is outside the plausible range "
+                "[-1,000,000,000 … 1,000,000,000]."
+            )
+        return val
+
+    # CHANGED: Normalise optional text fields from NaN/blank → None
+    @field_validator("counterparty", "location", mode="before")
+    @classmethod
+    def coerce_optional_fields(cls, v: Any) -> Optional[str]:
+        if _is_nan_like(v):
+            return None
+        s = str(v).strip()
+        return s or None
+
+    # CHANGED: Ensure description/method are non-empty strings
+    @field_validator("description", "method", mode="before")
+    @classmethod
+    def coerce_required_str(cls, v: Any) -> str:
+        if _is_nan_like(v):
+            return "N/A"
+        return str(v).strip()
+
+    # CHANGED: Ensure IDs are non-empty strings
+    @field_validator("transaction_id", "account_id", mode="before")
+    @classmethod
+    def coerce_txn_id_str(cls, v: Any) -> str:
+        if _is_nan_like(v):
+            raise ValueError("ID field must not be missing.")
+        return str(v).strip()
+
 
 class CaseData(BaseModel):
     """
@@ -116,6 +298,7 @@ class CaseData(BaseModel):
     case_created_at: str
     data_sources: Dict[str, str]
 
+    # CHANGED: Ensure each case has at least one transaction
     @field_validator('transactions')
     @classmethod
     def validate_transactions_not_empty(cls, v):
@@ -123,16 +306,18 @@ class CaseData(BaseModel):
             raise ValueError("Transactions list cannot be empty.")
         return v
 
+    # CHANGED: Ensure all accounts belong to the same customer
     @field_validator('accounts')
     @classmethod
     def validate_accounts_belong_to_customer(cls, v, info):
-        # Prevent accessing if 'customer' failed validation
         if 'customer' not in info.data:
             return v
         customer_id = info.data.get('customer').customer_id
         for account in v:
             if account.customer_id != customer_id:
-                raise ValueError(f"Account {account.account_id} does not belong to customer {customer_id}")
+                raise ValueError(
+                    f"Account {account.account_id} does not belong to customer {customer_id}"
+                )
         return v
 
 

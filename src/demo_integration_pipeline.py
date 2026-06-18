@@ -255,7 +255,13 @@ def print_case_summary(case_data, risk_analysis) -> None:
 # STAGE 5 — SAR DOCUMENT CREATION & SAVING
 # ─────────────────────────────────────────────────────────────────────────────
 
-def create_sar_document(case_data, risk_analysis, compliance_review) -> dict:
+def create_sar_document(
+    case_data,
+    risk_analysis,
+    compliance_review,
+    review_status: str = "human_approved",
+    human_reviewer: str | None = "compliance_officer",
+) -> dict:
     """
     Build a complete SAR document dict from the three pipeline outputs.
 
@@ -272,7 +278,7 @@ def create_sar_document(case_data, risk_analysis, compliance_review) -> dict:
             'filing_date':   filing_date,
             'filing_type':   'Suspicious Activity Report',
             'ai_generated':  True,
-            'review_status': 'human_approved',
+            'review_status': review_status,
         },
         'subject_information': {
             'customer_name':  case_data.customer.name,
@@ -298,7 +304,7 @@ def create_sar_document(case_data, risk_analysis, compliance_review) -> dict:
             'case_id':         case_data.case_id,
             'processing_date': filing_date,
             'ai_agents_used':  ['RiskAnalyst', 'ComplianceOfficer'],
-            'human_reviewer':  'compliance_officer',
+            'human_reviewer':  human_reviewer,
         },
     }
 
@@ -366,41 +372,125 @@ def run_agent_pipeline(case_list: list, orchestrator, is_high_risk: bool = True)
         status = result.get("status")
 
         if status == "SUCCESS":
-            final          = result["final_output"]
-            classification = final.get("classification")
-            if classification not in ['Structuring', 'Sanctions', 'Fraud', 'Money_Laundering', 'Other']:
-                classification = 'Other'
+            final = result["final_output"]
+
+            # Normalize classification into allowed literals
+            raw_class = final.get("classification") or final.get("primary_risk_category", "Other")
+            raw_class_lower = str(raw_class).lower()
+
+            if raw_class_lower == "structuring":
+                classification = "Structuring"
+            elif raw_class_lower == "fraud":
+                classification = "Fraud"
+            elif raw_class_lower == "sanctions":
+                classification = "Sanctions"
+            elif raw_class_lower in ["money_laundering", "money laundering"]:
+                classification = "Money_Laundering"
+            else:
+                classification = "Other"
+
+            # Normalize risk_level from final or fallback to customer risk_rating
+            risk_level = final.get("risk_level")
+            if not risk_level:
+                risk_level = case.customer.risk_rating
+            if risk_level not in ["Low", "Medium", "High"]:
+                risk_level = "Medium"
+
+            key_indicators = final.get("key_indicators", [])
 
             risk_analysis = RiskAnalystOutput(
                 classification   = classification,
                 confidence_score = final.get("confidence_score", 0.0),
-                reasoning        = final.get("reasoning",        "Pipeline analysis"),
-                key_indicators   = final.get("key_indicators",   []),
-                risk_level       = final.get("risk_level",       "High"),
+                reasoning        = final.get("reasoning", "Pipeline analysis"),
+                key_indicators   = key_indicators,
+                risk_level       = risk_level,
             )
+
             compliance_review = ComplianceOfficerOutput(
-                narrative            = final.get("narrative",            "SAR narrative pending."),
-                narrative_reasoning  = final.get("narrative_reasoning",  ""),
+                narrative            = final.get("narrative", "SAR narrative pending."),
+                narrative_reasoning  = final.get("reasoning", ""),
                 regulatory_citations = final.get("regulatory_citations", ["31 CFR 1020.320"]),
-                completeness_check   = final.get("completeness_check",   True),
+                completeness_check   = final.get("completeness_check", True),
             )
+            # --- AI confidence gate (strict) --------------------------------
+            ai_confident = (
+                compliance_review.completeness_check
+                and risk_analysis.confidence_score >= 0.90
+                and risk_analysis.classification in ["Structuring", "Money_Laundering"]
+            )
+            # -----------------------------------------------------------------
 
-            sar_doc = create_sar_document(case, risk_analysis, compliance_review)
-            save_sar_document(sar_doc)
+            if ai_confident:
+                # AI-only SAR (no human reviewer)
+                sar_doc = create_sar_document(
+                    case,
+                    risk_analysis,
+                    compliance_review,
+                    review_status="ai_only",
+                    human_reviewer=None,
+                )
+                save_sar_document(sar_doc)
 
-            approved.append(case.case_id)
-            processed.append(case.customer.customer_id)
-            decisions.append({
-                'case_id':                     case.case_id,
-                'customer_id':                 case.customer.customer_id,
-                'customer_name':               case.customer.name,
-                'risk_rating':                 case.customer.risk_rating,
-                'decision':                    'PROCEED',
-                'ai_classification':           risk_analysis.classification,
-                'ai_confidence':               risk_analysis.confidence_score,
-                'compliance_narrative_exists': True,
-            })
-            print(f"   ✅ SAR filed | {classification} | {risk_analysis.confidence_score:.0%} confidence")
+                approved.append(case.case_id)
+                processed.append(case.customer.customer_id)
+                decisions.append({
+                    'case_id':                     case.case_id,
+                    'customer_id':                 case.customer.customer_id,
+                    'customer_name':               case.customer.name,
+                    'risk_rating':                 case.customer.risk_rating,
+                    'decision':                    'PROCEED',
+                    'ai_classification':           risk_analysis.classification,
+                    'ai_confidence':               risk_analysis.confidence_score,
+                    'compliance_narrative_exists': True,
+                })
+                print(
+                    f"   ✅ AI-ONLY SAR filed | {classification} | "
+                    f"{risk_analysis.confidence_score:.0%} confidence"
+                )
+
+            else:
+                # Any doubt → prompt human Compliance Officer
+                human_approves = get_human_decision(risk_analysis.risk_level)
+
+                if human_approves:
+                    # Human says: file SAR
+                    sar_doc = create_sar_document(
+                        case,
+                        risk_analysis,
+                        compliance_review,
+                        review_status="human_approved",
+                        human_reviewer="compliance_officer",
+                    )
+                    save_sar_document(sar_doc)
+
+                    approved.append(case.case_id)
+                    processed.append(case.customer.customer_id)
+                    decisions.append({
+                        'case_id':                     case.case_id,
+                        'customer_id':                 case.customer.customer_id,
+                        'customer_name':               case.customer.name,
+                        'risk_rating':                 case.customer.risk_rating,
+                        'decision':                    'PROCEED',
+                        'ai_classification':           risk_analysis.classification,
+                        'ai_confidence':               risk_analysis.confidence_score,
+                        'compliance_narrative_exists': True,
+                    })
+                    print("   ✅ HUMAN-APPROVED SAR filed")
+
+                else:
+                    # Human says: do NOT file SAR
+                    rejected.append(case.case_id)
+                    decisions.append({
+                        'case_id':                     case.case_id,
+                        'customer_id':                 case.customer.customer_id,
+                        'customer_name':               case.customer.name,
+                        'risk_rating':                 case.customer.risk_rating,
+                        'decision':                    'HUMAN_REVIEW',
+                        'ai_classification':           risk_analysis.classification,
+                        'ai_confidence':               risk_analysis.confidence_score,
+                        'compliance_narrative_exists': True,
+                    })
+                    print("   👤 HUMAN REVIEW — SAR not filed")
 
         elif status == "HUMAN_REVIEW":
             rejected.append(case.case_id)

@@ -1,25 +1,36 @@
 # 🛡️ Agentic AI for Financial Services — SAR Processing System
 
-An end-to-end **Suspicious Activity Report (SAR)** automation pipeline built with a multi-agent architecture, Pydantic data validation, Chain-of-Thought reasoning, ReACT-based narrative generation, and a live Streamlit compliance dashboard.
+An end-to-end **Suspicious Activity Report (SAR)** automation pipeline built with a multi-agent architecture, Pydantic data validation, Chain-of-Thought reasoning, ReACT-based narrative generation, and a live Streamlit compliance dashboard.[file:233][file:236]
 
-The system ingests customer, account, and transaction data; screens it for suspicious financial activity; reasons through a classification using Chain-of-Thought prompting; routes high-risk cases through a human-in-the-loop review gate; and generates regulator-ready SAR narratives using a ReACT (Reasoning + Acting) agent — all while keeping a full audit trail of every decision.
+The system ingests customer, account, and transaction data; screens it for suspicious financial activity; reasons through a classification using Chain-of-Thought prompting; routes high-risk cases through a human-in-the-loop review gate; and generates regulator-ready SAR narratives using a ReACT (Reasoning + Acting) agent — all while keeping a full audit trail of every decision.[file:233][file:236]
 
 ---
 
 ## 🎯 What It Does
 
-- **Detects suspicious financial activity** using AI-powered pattern recognition across customer, account, and transaction data
-- **Classifies activity** into five typologies — `Structuring`, `Sanctions`, `Fraud`, `Money_Laundering`, `Other` — with confidence scores and risk levels
-- **Generates regulatory-ready narratives** (≤120 words) suitable for FinCEN-style SAR filing, complete with regulatory citations
-- **Implements a human-in-the-loop decision gate** before expensive narrative generation runs
-- **Produces complete audit trails** of every agent decision for compliance review
-- **Visualizes results** through an interactive Streamlit dashboard
+- **Detects suspicious financial activity** using AI-powered pattern recognition across customer, account, and transaction data  
+- **Classifies activity** into five typologies — `Structuring`, `Sanctions`, `Fraud`, `Money_Laundering`, `Other` — with confidence scores and risk levels  
+- **Generates regulatory-ready narratives** (≤120 words) suitable for FinCEN-style SAR filing, complete with regulatory citations  
+- **Implements a human-in-the-loop decision gate** before expensive narrative generation runs  
+- **Produces complete audit trails** of every agent decision for compliance review  
+- **Visualizes results** through an interactive Streamlit dashboard[file:233][file:236]
+
+---
+
+## ✅ What’s New in This Implementation
+
+- **4‑Agent Escalation Pipeline**: Triage, Risk Analyst, Structuring Expert, and Compliance Officer are coordinated by a `FraudOrchestrator`, with explicit stages and escalation logic.[file:238]  
+- **AI-Only vs Human-Approved Flows**: SARs can be filed directly by the AI (`review_status="ai_only"`, `human_reviewer = null`) or via a human-reviewed path (`review_status="human_approved"`, `human_reviewer = "compliance_officer"`), captured in SAR JSONs and audit logs.[file:236]  
+- **Deterministic Mock Mode**: An `InternalMockClient` plus a `USE_MOCK` flag allows full end-to-end runs with deterministic outputs and zero API cost.[file:236][file:238]  
+- **Stable Output Pathing**: All outputs (SARs, logs, charts, dashboard data) resolve under `outputs/` via helpers in `demo_integration_pipeline.py`, independent of where the notebook or script is launched from.[file:236]  
+- **Dashboard-Ready Aggregates & KPIs**: Helpers such as `aggregate_sar_history`, `export_live_session`, and `calculate_kpis` generate CSV, JSON, and KPI metrics consumed by the Streamlit dashboard.[file:236]  
+- **Comprehensive Testing**: 30 tests cover foundation schemas, the RiskAnalystAgent, and the ComplianceOfficerAgent, plus integration and end-to-end workflow checks.[file:233]
 
 ---
 
 ## 🏗️ Architecture Overview
 
-```
+```text
 CSV Data → DataLoader → CaseData Objects
                               ↓
                     ┌─────────────────────┐
@@ -38,16 +49,16 @@ CSV Data → DataLoader → CaseData Objects
                     Streamlit Dashboard
 ```
 
-The pipeline runs in two stages:
+The pipeline runs in two stages:[file:233][file:236]
 
-1. **Risk Screening & Analysis** — cases are filtered by risk rating and activity volume, then passed through Triage and Risk Analyst agents for an initial Chain-of-Thought classification.
-2. **Human Review → Compliance Narrative** — only cases that clear human review proceed to the Compliance Officer agent, which drafts and validates the final SAR narrative using a ReACT loop. This keeps the more expensive narrative-generation calls limited to approved cases.
+1. **Risk Screening & Analysis** — cases are filtered by risk rating and activity volume, then passed through Triage and Risk Analyst agents for an initial Chain-of-Thought classification.  
+2. **Human Review → Compliance Narrative** — only cases that clear human review proceed to the Compliance Officer agent, which drafts and validates the final SAR narrative using a ReACT loop; this keeps expensive narrative-generation calls limited to approved cases.[file:233][file:236]
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 .
 ├── app.py                          # Streamlit SAR workflow dashboard
 ├── requirements.txt                # All dependencies
@@ -94,6 +105,7 @@ The pipeline runs in two stages:
     ├── test_risk_analyst.py        # RiskAnalystAgent unit tests
     └── test_compliance_officer.py  # ComplianceOfficerAgent unit tests
 ```
+[file:233][file:236][file:243]
 
 ---
 
@@ -101,23 +113,40 @@ The pipeline runs in two stages:
 
 ### Prerequisites
 
-- Python 3.8+
-- An OpenAI API key
+- Python 3.8+  
+- An OpenAI API key  
 - (Recommended) VS Code with the Jupyter extension
 
 ### Installation
 
-```bash
-# Install dependencies
-pip install -r requirements.txt
+#### 🛠️ Environment Setup & Quickstart
 
-# Set up environment variables
+From the repository root:
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate && pip install --upgrade -r requirements.txt
+```
+
+If your terminal opens outside the repository root:
+
+```bash
+cd fin-audit-intelligence-suite \
+  && python3 -m venv .venv \
+  && source .venv/bin/activate \
+  && pip install -r requirements.txt
+```
+
+(Replace `fin-audit-intelligence-suite` with your actual root directory name.)
+
+#### Set up environment variables
+
+```bash
 cp .env.template .env
 ```
 
 Edit `.env` and add your API key:
 
-```
+```text
 OPENAI_API_KEY=your_actual_api_key_here
 ```
 
@@ -130,25 +159,30 @@ import subprocess, sys
 subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt", "-q"], check=True)
 ```
 
-Then open and run all cells in:
+Then open and run:
 
-```
+```text
 notebooks/demo_automated_pipeline.ipynb
 ```
+[file:233][file:236]
 
 ### Launching the Dashboard
 
 ```bash
 streamlit run app.py
 ```
+[file:236]
 
 ---
 
 ## ⚙️ Configuration
 
-`config/pipeline_config.yaml` controls all directory paths and pipeline settings — output paths resolve consistently regardless of the directory the pipeline is launched from. `config/models.yaml` defines model tiers, and `config/prompts.yaml` holds the agent system prompts.
+`config/pipeline_config.yaml` controls directory paths and pipeline settings; output paths resolve consistently under `outputs/` regardless of the directory the pipeline is launched from.[file:236]  
+`config/models.yaml` defines model tiers, and `config/prompts.yaml` holds the agent system prompts.[file:247][file:246]
 
-### Mock vs. Real API Mode
+---
+
+## 🧪 Mock vs Real API Mode
 
 The pipeline can run with or without live API calls, controlled by a single flag at the top of the main notebook:
 
@@ -157,12 +191,13 @@ USE_MOCK = True   # default — InternalMockClient returns deterministic respons
 USE_MOCK = False  # routes through the real OpenAI client, requires a valid OPENAI_API_KEY
 ```
 
-In mock mode, `InternalMockClient` returns deterministic responses based on transaction patterns — every pipeline stage runs, SAR documents are generated, and the dashboard works fully, which makes it well suited for development and demos. In real-API mode, the orchestrator pauses on any case flagged `HUMAN_REVIEW` so a person can review it before the (more expensive) compliance narrative step runs.
+In mock mode, `InternalMockClient` returns deterministic responses based on transaction patterns — every pipeline stage runs, SAR documents are generated, and the dashboard works fully.[file:236][file:238]  
+In real-API mode, the orchestrator pauses on any case flagged `HUMAN_REVIEW` so a person can review it before the compliance narrative step runs.[file:238]
 
-| Mode | Relative cost per case | Typical use |
-|---|---|---|
-| Mock (`USE_MOCK=True`) | None | Development, testing, demos |
-| Real API (`USE_MOCK=False`) | Screening + narrative generation calls | Production runs |
+| Mode                        | Relative cost per case         | Typical use                     |
+|-----------------------------|--------------------------------|---------------------------------|
+| Mock (`USE_MOCK=True`)      | None                           | Development, testing, demos     |
+| Real API (`USE_MOCK=False`) | Screening + narrative calls    | Production-like runs on sandbox |
 
 ---
 
@@ -170,27 +205,29 @@ In mock mode, `InternalMockClient` returns deterministic responses based on tran
 
 ### Pydantic Schemas (`src/foundation_sar.py`)
 
-| Schema | Purpose | Key Fields |
-|---|---|---|
-| `CustomerData` | Customer profile | `customer_id`, `name`, `risk_rating` (Low/Medium/High), `customer_since` (date) |
-| `AccountData` | Account details | `account_id`, `customer_id`, `balance` (float), `account_type` |
-| `TransactionData` | Transaction record | `transaction_id`, `amount` (float), `transaction_date` (date), `transaction_type` |
-| `CaseData` | Unified case object | Links customer + accounts + transactions with a unique `case_id` |
-| `RiskAnalystOutput` | Risk assessment result | `classification`, `confidence_score` (0.0–1.0), `risk_level`, `key_indicators` |
-| `ComplianceOfficerOutput` | SAR narrative | `narrative`, `regulatory_citations`, `completeness_check` |
+| Schema                     | Purpose                 | Key Fields                                               |
+|----------------------------|-------------------------|---------------------------------------------------------|
+| `CustomerData`            | Customer profile        | `customer_id`, `name`, `risk_rating`, `customer_since` |
+| `AccountData`             | Account details         | `account_id`, `customer_id`, `balance`, `account_type` |
+| `TransactionData`         | Transaction record      | `transaction_id`, `amount`, `transaction_date`, `transaction_type` |
+| `CaseData`                | Unified case object     | Links customer + accounts + transactions with `case_id`|
+| `RiskAnalystOutput`       | Risk assessment result  | `classification`, `confidence_score`, `risk_level`, `key_indicators` |
+| `ComplianceOfficerOutput` | SAR narrative           | `narrative`, `regulatory_citations`, `completeness_check` |
+[file:243]
 
-**Validation rules:**
-- `risk_rating` constrained to `['Low', 'Medium', 'High']`
-- `confidence_score` bounded `0.0–1.0`
-- `risk_level` constrained to `['Low', 'Medium', 'High', 'Critical']`
-- `classification` constrained to `['Structuring', 'Sanctions', 'Fraud', 'Money_Laundering', 'Other']`
-- Date fields parsed with `datetime` validators
-- Optional fields default to `None` or `[]` to handle missing CSV values
+Validation rules include:
+
+- `risk_rating` constrained to `['Low', 'Medium', 'High']`  
+- `confidence_score` bounded `0.0–1.0`  
+- `risk_level` constrained to `['Low', 'Medium', 'High', 'Critical']`  
+- `classification` constrained to `['Structuring', 'Sanctions', 'Fraud', 'MoneyLaundering', 'Other']`  
+- Date fields parsed with `datetime` validators  
+- Optional fields default to `None` or `[]` to handle missing CSV values[file:243]
 
 ### DataLoader & ExplainabilityLogger
 
-- **`DataLoader`** — merges `customers.csv`, `accounts.csv`, and `transactions.csv` into unified `CaseData` objects via `create_case_from_data()`
-- **`ExplainabilityLogger`** — writes structured JSONL audit entries with timestamps, unique identifiers, agent decisions, and reasoning chains
+- **`DataLoader`** — merges `customers.csv`, `accounts.csv`, and `transactions.csv` into unified `CaseData` objects via `create_case_from_data()`.[file:243]  
+- **`ExplainabilityLogger`** — writes structured JSONL audit entries with timestamps, identifiers, agent decisions, and reasoning chains to `outputs/audit_logs/`.[file:243][file:233]
 
 ---
 
@@ -198,9 +235,9 @@ In mock mode, `InternalMockClient` returns deterministic responses based on tran
 
 **File:** `src/risk_analyst_agent.py`
 
-`RiskAnalystAgent` uses a Chain-of-Thought system prompt that enforces step-by-step reasoning before classification:
+`RiskAnalystAgent` uses a Chain-of-Thought system prompt that enforces step-by-step reasoning:[file:233]
 
-```
+```text
 Step 1: Identify transaction patterns (velocity, amounts, timing)
 Step 2: Check for threshold structuring indicators ($8,000–$9,999 band)
 Step 3: Assess counterparty and geographic risk
@@ -210,17 +247,16 @@ Step 5: Assign classification and confidence score
 
 **Supported classifications:**
 
-| Classification | Trigger Pattern |
-|---|---|
-| `Structuring` | Repeated transactions just below the $10K CTR threshold |
-| `Sanctions` | Counterparty matches watchlist indicators |
-| `Fraud` | Unusual account takeover or identity patterns |
-| `Money_Laundering` | Layering — high-velocity in/out wire transfers |
-| `Other` | Suspicious but doesn't fit the above typologies |
+| Classification     | Trigger Pattern                                      |
+|--------------------|------------------------------------------------------|
+| `Structuring`      | Repeated transactions just below the $10K CTR threshold |
+| `Sanctions`        | Counterparty matches watchlist indicators           |
+| `Fraud`            | Account takeover or identity anomalies              |
+| `Money_Laundering` | Layering via high-velocity in/out wire transfers    |
+| `Other`            | Suspicious activity not fitting the above patterns  |
+[file:233]
 
-**Output:** a `RiskAnalystOutput` containing `confidence_score` (0.0–1.0), `risk_level` (Low/Medium/High/Critical), and a `key_indicators` list.
-
-**Error handling:** JSON parsing failures fall back to `_generate_fallback_analysis()` with a structured response; API errors are caught and logged so the pipeline continues rather than crashing.
+The agent outputs a `RiskAnalystOutput` with `confidence_score`, `risk_level`, and `key_indicators`, and falls back to a structured default if JSON parsing fails.[file:233]
 
 ---
 
@@ -228,28 +264,29 @@ Step 5: Assign classification and confidence score
 
 **File:** `src/compliance_officer_agent.py`
 
-`ComplianceOfficerAgent` implements a ReACT (Reasoning + Acting) loop:
+`ComplianceOfficerAgent` implements a ReACT loop:[file:233]
 
-```
+```text
 REASON → Analyze the risk findings and determine regulatory obligations
 ACT    → Draft the SAR narrative with required elements
-REASON → Verify narrative completeness against a BSA/AML-style checklist
+REASON → Verify narrative completeness against a checklist
 ACT    → Add regulatory citations and finalize for submission
 ```
 
-**Narrative requirements:**
-- ≤ 120 words (enforced in the system prompt and validated post-generation)
-- Covers who (subject), what (activity), when (timeframe), where (accounts/locations), and why (basis for suspicion)
-- Professional tone suitable for regulatory submission
-- Includes regulatory citations (e.g., `31 CFR 1020.320`, `BSA 31 U.S.C. 5318(g)`)
+Narratives must:
 
-**Output:** a `ComplianceOfficerOutput` containing `narrative`, `narrative_reasoning`, `regulatory_citations`, and `completeness_check`.
+- Be ≤ 120 words  
+- Cover who, what, when, where, and why  
+- Use a professional regulatory tone  
+- Include citations such as `31 CFR 1020.320` and relevant BSA references[file:233]
+
+The agent returns a `ComplianceOfficerOutput` with `narrative`, `narrative_reasoning`, `regulatory_citations`, and a `completeness_check` flag.[file:233]
 
 ---
 
 ## 🔄 Two-Stage Workflow
 
-**File:** `src/demo_integration_pipeline.py` (invoked from `demo_automated_pipeline.ipynb`)
+**File:** `src/demo_integration_pipeline.py`
 
 ### Stage 1 — Risk Screening
 
@@ -259,7 +296,7 @@ selected_customers, rest_of_cases = screen_high_risk_customers(
 )
 ```
 
-Screening criteria: `risk_rating` in `['Medium', 'High']` **and** (`total_amount > $100K` **or** `transaction_count > 50`).
+Screening criteria: `risk_rating` in `['Medium', 'High']` and (`total_amount > 100000` or `transaction_count > 50`).[file:236]
 
 ### Stage 2 — 4-Agent Escalation Pipeline
 
@@ -267,19 +304,19 @@ Screening criteria: `risk_rating` in `['Medium', 'High']` **and** (`total_amount
 res1 = run_agent_pipeline(high_risk_cases, orchestrator, is_high_risk=True)
 ```
 
-```
+```text
 Triage → Risk Analyst → Structuring Expert → Compliance Officer
   ↓            ↓                ↓                    ↓
 Filter      CoT Analysis    Pattern Check      ReACT Narrative
 ```
 
-Cases flagged `HUMAN_REVIEW` pause the pipeline for manual review before the (costlier) narrative-generation step runs.
+Cases flagged `HUMAN_REVIEW` pause for manual review before narrative generation and SAR filing.[file:236][file:238]
 
 ---
 
 ## 📄 SAR Document Structure
 
-Each approved case generates a JSON file under `outputs/filed_sars/`:
+Each approved case generates a JSON file under `outputs/filed_sars/`:[file:236]
 
 ```json
 {
@@ -292,78 +329,136 @@ Each approved case generates a JSON file under `outputs/filed_sars/`:
 }
 ```
 
+### AI vs Human Review Policy
+
+- **AI-only SARs**  
+  - `sar_metadata.review_status = "ai_only"`  
+  - `audit_trail.human_reviewer = null`  
+  - Used when the AI pipeline meets a high-confidence threshold and no human explicitly reviews the case.[file:236]
+
+- **Human-approved SARs**  
+  - `sar_metadata.review_status = "human_approved"`  
+  - `audit_trail.human_reviewer = "compliance_officer"`  
+  - Used when a human compliance officer approves the case before narrative generation and filing.[file:236]
+
+This policy can be audited easily through both the command line and the dashboard.[file:236]
+
 ---
 
 ## 📊 Audit Trail & Efficiency Metrics
 
-Every agent decision is written to `outputs/audit_logs/` as JSONL:
+Every agent decision is written to `outputs/audit_logs/` as JSONL:[file:233][file:236]
 
 ```json
 {
-  "case_id": "...", "customer_name": "...", "decision": "PROCEED",
-  "ai_classification": "Money_Laundering", "ai_confidence": 0.91,
-  "compliance_narrative_exists": true, "timestamp": "..."
+  "case_id": "...",
+  "customer_name": "...",
+  "decision": "PROCEED",
+  "ai_classification": "Money_Laundering",
+  "ai_confidence": 0.91,
+  "compliance_narrative_exists": true,
+  "timestamp": "..."
 }
 ```
 
-`analyze_workflow_efficiency()` prints a summary of pipeline cost, time savings versus a manual baseline, and the share of cases meeting a high-confidence threshold.
+`analyze_workflow_efficiency()` prints a workflow summary including processing volume, approval/rejection rates, and cost savings versus a manual baseline.[file:236]
+
+### Workflow KPIs and Cost Model
+
+The pipeline computes a “Corporate SAR Workflow Dashboard” with:[file:236]
+
+- Total cases processed, SARs filed, and cases filtered early  
+- Average AI processing time vs a 30-minute manual baseline and percentage time saved  
+- AI vs human-only cost model and overall cost savings / ROI  
+- High-confidence case rate (≥ 0.80) and triage filter rate  
+
+These KPIs feed the Streamlit **Workflow Economics** and **AI Decision Analytics** tabs via `calculate_kpis`, `aggregate_sar_history`, and `export_live_session`.[file:236]
 
 ---
 
 ## 📈 Live Dashboard (`app.py`)
 
-Launch with `streamlit run app.py`.
+Launch with:
 
-| Tab | Contents |
-|---|---|
-| 📊 Overview | Filing volume timeline, classification mix, data quality notes |
+```bash
+streamlit run app.py
+```
+
+| Tab                      | Contents                                                                |
+|--------------------------|-------------------------------------------------------------------------|
+| 📊 Overview              | Filing volume timeline, classification mix, data quality notes          |
 | 🏷️ Classification & Confidence | Distribution charts, risk level breakdown, confidence histograms |
-| 💰 Workflow Economics | Interactive what-if cost/ROI calculator |
-| 🤖 AI Decision Analytics | Agent roster, override tracking, top flagged customers |
-| 🔎 Case Explorer | Search by customer/SAR ID, full narrative drill-down, CSV export |
-| 🟢 Latest Run | Current batch summary, per-case decisions, transaction drill-down |
+| 💰 Workflow Economics    | Interactive what-if cost/ROI calculator                                |
+| 🤖 AI Decision Analytics | Agent roster, override tracking, top flagged customers                 |
+| 🔎 Case Explorer         | Search by customer/SAR ID, full narrative drill-down, CSV export       |
+| 🟢 Latest Run            | Current batch summary, per-case decisions, transaction drill-down      |
+[file:236]
 
-Data sources (all under `outputs/live_dashboard/`): `sar_history.csv` (aggregated historical SAR records), `sar_history_meta.json` (load stats and failure counts), and `live_session.json` (current run case data).
+Data sources under `outputs/live_dashboard/` include `sar_history.csv`, `sar_history_meta.json`, and `live_session.json`.[file:236]
+
+---
+
+## 🔍 Inspecting Outputs from the Command Line
+
+- **List all filed SARs**:  
+  ```bash
+  ls outputs/filed_sars/*.json
+  ```
+- **Filter human-approved SARs** (requires `jq`):  
+  ```bash
+  jq -e '
+    .sar_metadata.review_status == "human_approved" and
+    .audit_trail.human_reviewer == "compliance_officer"
+  ' outputs/filed_sars/*.json
+  ```
+- **Filter AI-only SARs**:  
+  ```bash
+  jq -e '
+    .sar_metadata.review_status == "ai_only" and
+    .audit_trail.human_reviewer == null
+  ' outputs/filed_sars/*.json
+  ```
+[file:236]
 
 ---
 
 ## 🧪 Testing
 
-The project includes **30 tests** across three modules.
+The project includes 30 tests across three modules.[file:233]
 
 ```bash
 # Run all tests
 python -m pytest tests/ -v
 
-# Run individual module tests
-python -m pytest tests/test_foundation.py -v          # Core data structures
-python -m pytest tests/test_risk_analyst.py -v         # Chain-of-Thought agent
-python -m pytest tests/test_compliance_officer.py -v   # ReACT agent
+# Run individual modules
+python -m pytest tests/test_foundation.py -v
+python -m pytest tests/test_risk_analyst.py -v
+python -m pytest tests/test_compliance_officer.py -v
 
 # With coverage
 python -m pytest tests/ --cov=src --cov-report=html
 ```
 
-| Module | Tests | Coverage |
-|---|---|---|
-| `test_foundation.py` | 10 | Schema validation, CSV loading, case aggregation, audit logging |
-| `test_risk_analyst.py` | 10 | Agent initialization, case analysis, JSON parsing, error handling |
-| `test_compliance_officer.py` | 10 | Narrative generation, word-limit enforcement, citations, multi-format parsing |
+| Module                  | Tests | Coverage Focus                                     |
+|-------------------------|-------|----------------------------------------------------|
+| `test_foundation.py`    | 10    | Schema validation, CSV loading, case aggregation, audit logging |
+| `test_risk_analyst.py`  | 10    | Agent initialization, case analysis, JSON parsing, error handling |
+| `test_compliance_officer.py` | 10 | Narrative generation, word-limit enforcement, citations, parsing |
+[file:233]
 
----
+### Integration & End-to-End Tests
 
-## 🔍 Troubleshooting & Lessons Learned
+`03_workflow_integration.ipynb` and `demo_integration_pipeline.py` include:[file:233][file:236]
 
-- **Path resolution** — output files were inconsistently written depending on the launch directory; resolved by anchoring all paths to `__file__` in `demo_integration_pipeline.py` and `app.py`.
-- **CSV vs. Parquet** — `pyarrow` version conflicts caused errors when saving list-type columns (`key_indicators`, `ai_agents_used`, `citations`); switched to CSV with `ast.literal_eval()` parsing on read to restore list types.
-- **API response variability** — agents occasionally returned malformed JSON or unsupported `classification` values; mitigated with a fallback in `run_agent_pipeline()` that remaps unrecognized classifications to `'Other'`.
-- **Logger compatibility** — some agents called `self.logger.info()`, which `ExplainabilityLogger` doesn't implement; replaced with `print()` in the affected agent files.
+- Component readiness checks (foundation, agents, tests)  
+- Integration tests via pytest for all core components  
+- A complete system demonstration that processes multiple customers, generates SARs, writes audit logs, and computes efficiency metrics  
 
 ---
 
 ## 📦 Dependencies
 
-```
+```text
 pandas          # data manipulation
 pydantic        # schema validation
 openai          # LLM API client
@@ -376,7 +471,7 @@ jupyter         # notebook environment
 pytest          # testing framework
 ```
 
-Install everything at once:
+Install everything:
 
 ```bash
 pip install -r requirements.txt
@@ -386,21 +481,21 @@ pip install -r requirements.txt
 
 ## 🛠️ Built With
 
-* [Python](https://python.org) — core language
-* [Pydantic](https://pydantic-docs.helpmanual.io/) — data validation and settings management
-* [OpenAI API](https://platform.openai.com/) — LLM integration
-* [Pandas](https://pandas.pydata.org/) — data manipulation and analysis
-* [Jupyter](https://jupyter.org/) — interactive development environment
-* [pytest](https://pytest.org/) — testing framework
-* [python-dotenv](https://pypi.org/project/python-dotenv/) — environment variable management
-* [Streamlit](https://streamlit.io/) — live dashboard
-* [Plotly](https://plotly.com/) — interactive charts
-* [Matplotlib](https://matplotlib.org/) — data visualization
+- Python — core language  
+- Pydantic — data validation and settings management  
+- OpenAI API — LLM integration  
+- Pandas — data manipulation and analysis  
+- Jupyter — interactive development environment  
+- pytest — testing framework  
+- python-dotenv — environment variable management  
+- Streamlit — live dashboard  
+- Plotly — interactive charts  
+- Matplotlib — data visualization[file:243][file:236]
 
-**Methodologies:** Chain-of-Thought prompting, ReACT (Reasoning + Acting) prompting, multi-agent architecture, human-in-the-loop review.
+**Methodologies:** Chain-of-Thought prompting, ReACT (Reasoning + Acting), multi-agent architecture, human-in-the-loop review.[file:233][file:236]
 
 ---
 
 ## ⚠️ Note
 
-This project uses synthetic financial data for demonstration purposes. It illustrates AI-assisted detection and reporting techniques and is not a substitute for a production-grade regulatory compliance system.
+This project uses synthetic financial data for demonstration purposes. It illustrates AI-assisted detection and reporting techniques and is not a substitute for a production-grade regulatory compliance system.[file:233]

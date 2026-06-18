@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-17T10:59:55.673174",
+  "generated_at": "2026-06-18T11:17:19.550922",
   "summary": {
     "total_cases_this_batch": 25,
     "reviewed": 25,
     "pending_review": 0,
-    "approved_sars": 25,
-    "rejected": 0,
+    "approved_sars": 17,
+    "rejected": 8,
     "total_flagged_amount": 4466123.58
   },
   "cases": [
@@ -81,9 +81,9 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "74972423-290e-4108-8310-4b0f934467b1",
+      "case_id": "e163e555-7569-44ec-8562-3a176c7438b8",
       "decision": "PROCEED",
-      "ai_classification": "Other",
+      "ai_classification": "Structuring",
       "ai_confidence": 0.91,
       "compliance_narrative_exists": true,
       "is_approved_sar": true,
@@ -161,7 +161,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "af1644d2-d32a-4033-a3b0-7c9fc2e6ee7c",
+      "case_id": "cb980607-2ede-41ec-8b2d-4f5c2f7d79f4",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -241,7 +241,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "6bf0d625-5216-4bb2-ba3c-503c61e15daf",
+      "case_id": "74c77c57-f35f-494e-abb9-ebf6c35b01c1",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -321,9 +321,9 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "0a72531f-1166-4d81-8bf2-8c00abb5ded3",
+      "case_id": "b099b838-6a03-479e-b68c-64f25d5b68af",
       "decision": "PROCEED",
-      "ai_classification": "Other",
+      "ai_classification": "Structuring",
       "ai_confidence": 0.91,
       "compliance_narrative_exists": true,
       "is_approved_sar": true,
@@ -401,7 +401,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "cfcc43e2-71fd-4bc2-8a4c-5667c024c5f6",
+      "case_id": "335ae368-e22f-4ee2-83da-2dd09866e298",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -481,13 +481,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "6d24a78f-a5df-47fb-814c-73e28433a1e3",
-      "decision": "PROCEED",
+      "case_id": "9868c32a-e94d-4a33-8d9b-3337b3ef96a8",
+      "decision": "HUMAN_REVIEW",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0081",
@@ -561,13 +561,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "ee973d8c-05d5-4f93-a959-be4718d3822e",
-      "decision": "PROCEED",
+      "case_id": "c2f1803a-a6e9-4661-8957-cf93e538b8c4",
+      "decision": "HUMAN_REVIEW",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0135",
@@ -641,13 +641,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "4c25e723-abe7-46a3-b2b3-e36e3e8715db",
-      "decision": "PROCEED",
+      "case_id": "1a1e432f-f9de-41c2-8d8c-4f517831cc18",
+      "decision": "HUMAN_REVIEW",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0143",
@@ -721,7 +721,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "5616a147-37ff-4d1c-b89c-1bb39c905d4c",
+      "case_id": "b486e4c6-6449-475b-9fa9-5a2d9265fe2c",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -801,7 +801,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "c85ca0da-b71d-4057-a72e-b5818875bd9e",
+      "case_id": "2a72e2ad-f29c-4e72-9229-3c0708d5acdb",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -881,9 +881,9 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "5f864d65-d228-4a7f-89f7-0b516cce0678",
+      "case_id": "2e3abb9e-564a-47a1-b958-6aa83e689b87",
       "decision": "PROCEED",
-      "ai_classification": "Other",
+      "ai_classification": "Structuring",
       "ai_confidence": 0.91,
       "compliance_narrative_exists": true,
       "is_approved_sar": true,
@@ -961,7 +961,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "f6291e2b-bb55-40a5-b4fd-f5f9a80039c1",
+      "case_id": "6e38cba5-20f4-45f7-883d-d92cfba1b316",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -1041,13 +1041,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "969c4c6a-368e-42d0-8823-79294b748fc2",
-      "decision": "PROCEED",
+      "case_id": "a85eb666-b9fd-45ed-a35c-7b01ad667fe6",
+      "decision": "HUMAN_REVIEW",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0035",
@@ -1121,13 +1121,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "b197b0b4-c7b4-429d-b621-b45ef675e8d0",
-      "decision": "PROCEED",
+      "case_id": "41b40dbf-e837-43df-bc87-2228b022195a",
+      "decision": "HUMAN_REVIEW",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0095",
@@ -1201,13 +1201,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "0eda332e-e0c0-4e8c-a202-1e2e62571712",
-      "decision": "PROCEED",
+      "case_id": "80cfd9e6-c963-4133-a775-2094d14d213a",
+      "decision": "HUMAN_REVIEW",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0146",
@@ -1281,7 +1281,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "3bac0563-5172-4088-acc7-060ded86b64d",
+      "case_id": "d23dc239-5c39-4c9b-aff2-7f0cf01bb642",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -1361,7 +1361,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "c51fb740-7573-465b-9688-07a41b989981",
+      "case_id": "814bf2f0-dab6-4985-9d1a-70dbeab72d8e",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -1440,9 +1440,9 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "eccc75dd-d910-45c2-a78e-19c144643c2f",
+      "case_id": "2d486a25-1567-4e0c-a132-95573a1ec782",
       "decision": "PROCEED",
-      "ai_classification": "Other",
+      "ai_classification": "Structuring",
       "ai_confidence": 0.91,
       "compliance_narrative_exists": true,
       "is_approved_sar": true,
@@ -1519,9 +1519,9 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "83ef8774-0d8b-4f53-8ced-dd72ce202a94",
+      "case_id": "2e3c64c4-4e66-4dc0-b8e7-dbd0cd219aa6",
       "decision": "PROCEED",
-      "ai_classification": "Other",
+      "ai_classification": "Structuring",
       "ai_confidence": 0.91,
       "compliance_narrative_exists": true,
       "is_approved_sar": true,
@@ -1598,7 +1598,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "d2b2d2c8-6869-40f1-bfbb-642220993022",
+      "case_id": "2bdff7bc-b702-4a2f-8cb4-0ae202b9fec8",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -1677,13 +1677,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "86a26017-65b4-4da2-8ea4-5a4b55ba21c4",
-      "decision": "PROCEED",
+      "case_id": "ac6a9f30-4832-4d41-bb19-e3cdb56eca18",
+      "decision": "HUMAN_REVIEW",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0103",
@@ -1756,9 +1756,9 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "939e0654-9e8d-4dfc-9c3e-c6bd2304b457",
+      "case_id": "062fb463-10d6-46fb-8625-6bf6f1926efe",
       "decision": "PROCEED",
-      "ai_classification": "Other",
+      "ai_classification": "Structuring",
       "ai_confidence": 0.91,
       "compliance_narrative_exists": true,
       "is_approved_sar": true,
@@ -1835,7 +1835,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "d7841466-b17d-4153-8311-7a499c9b3f61",
+      "case_id": "b6326fd3-ade1-4ea9-acbf-45f3aa65dafd",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -1914,13 +1914,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "49e3a2fb-1f79-4ca9-9f4c-a98c35de5fd5",
-      "decision": "PROCEED",
+      "case_id": "1576d5ad-edd4-4acf-bc2d-6a5232a9c8ff",
+      "decision": "HUMAN_REVIEW",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0116",
@@ -1993,7 +1993,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "27ae3e1a-3819-486d-9934-78f5b1d4c10d",
+      "case_id": "19b62614-7273-435d-a300-8100ff972524",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,

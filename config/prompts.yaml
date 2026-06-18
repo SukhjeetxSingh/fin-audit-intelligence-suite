@@ -1,4 +1,4 @@
-# prompts.yaml
+# config/prompts.yaml
 
 COMPLIANCE_OFFICER:
     system_prompt: |
@@ -46,8 +46,10 @@ COMPLIANCE_OFFICER:
 
         Provide your output strictly matching this JSON schema layout:
         {{
-            "reasoning": "your step-by-step reasoning steps...",
-            "narrative": "your formal compiled SAR narrative text..."
+            "narrative_reasoning": "your step-by-step reasoning steps...",
+            "narrative": "your formal compiled SAR narrative text...",
+            "regulatory_citations": ["31 CFR 1020.320"],
+            "completeness_check": true
         }}
         
     narrative_compliance_required_elements:
@@ -268,6 +270,7 @@ RISK_ANALYST:
         - 'confidence_score' must be a float between 0.0 and 1.0.
         - 'key_indicators' must be a list of strings.
         - 'reasoning' must be under 500 characters.
+        - You should also include a brief explanation of how the confidence_score was derived.
         
         EXAMPLE OUTPUT:
         {
@@ -275,7 +278,7 @@ RISK_ANALYST:
             "risk_level": "High",
             "confidence_score": 0.92,
             "key_indicators": ["Near-threshold deposits", "Rapid fund movement"],
-            "reasoning": "Step 1-2: Evaluated history. Step 3-5: Pattern maps to Structuring to evade CTR thresholds (31 CFR 1020.320)."
+            "reasoning": "Step 1: Reviewed customer profile and full transaction history. Step 2: Detected repeated deposits just under $10,000 with rapid movement of funds. Step 3: Mapped these patterns to structuring typology under Bank Secrecy Act guidance. Step 4: Assessed the risk as High with limited mitigating factors. Step 5: Classified activity as Structuring designed to evade CTR thresholds (31 CFR 1020.320)."
         }
 
     cot_framework: 

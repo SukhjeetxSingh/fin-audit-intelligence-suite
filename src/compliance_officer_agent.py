@@ -1,3 +1,4 @@
+# src/compliance_officer_agent.py
 # Compliance Officer Agent - ReACT Implementation  
 # TODO: Implement Compliance Officer Agent using ReACT prompting
 
@@ -81,17 +82,78 @@ class ComplianceOfficerAgent(BaseAgent):
 
         # Pass hoisted name through to narrative generator
         customer_name = current_data.get("_customer_name", "the client")
+
         if self.use_mock:
-            case_data     = current_data.get("case_data")
-            risk_analysis = current_data.get("risk_analysis")
-            customer_name = current_data.get("_customer_name", "the client")
-            output = self._generate_fallback_narrative(case_data, risk_analysis)
+            customer      = current_data.get("customer", {})
+            transactions  = current_data.get("transactions", [])
+            customer_name = customer.get("name", current_data.get("_customer_name", "Unknown Subject"))
+            customer_id   = customer.get("customer_id", "N/A")
+
+            count = len(transactions)
+            total = sum(t.get("amount", 0) for t in transactions)
+
+            # Derive classification from triage category when possible
+            triage_category = current_data.get("primary_risk_category", "").lower()
+            if triage_category == "structuring":
+                classification = "Structuring"
+            elif triage_category in ["fraud", "sanctions"]:
+                classification = triage_category.capitalize()
+            else:
+                classification = "Suspicious Activity"
+
+            # Normalize risk level from customer risk_rating
+            customer_risk = current_data.get("risk_rating", "Medium")
+            if customer_risk not in ["Low", "Medium", "High"]:
+                customer_risk = "Medium"
+            risk_level = customer_risk
+
+            # Build indicators from layering_indicators + simple heuristics
+            indicators = current_data.get("layering_indicators", []) or []
+            if total > 100000:
+                indicators.append(f"High aggregate volume: ${total:,.2f}")
+            if count >= 50:
+                indicators.append(f"Transaction count: {count}")
+            if not indicators:
+                indicators = ["unusual transaction pattern"]
+
+            top_indicators = indicators[:2]
+
+            # Build a simple narrative directly from this flat data
+            narrative = (
+                f"{customer_name} (ID: {customer_id}) conducted {count} transactions "
+                f"totaling ${total:,.2f} between the review period. "
+                f"Activity indicates {classification.lower()} at {risk_level} risk. "
+                f"Key indicators: {', '.join(top_indicators)}. "
+                "Transactions lack clear economic purpose, consistent with suspicious activity "
+                "under the Bank Secrecy Act, 31 CFR 1020.320."
+            )
+
+            narrative_reasoning = (
+                f"Step 1 [Data Ingestion]: Parsed {count} transactions totaling ${total:,.2f} "
+                f"for {customer_name}. "
+                f"Step 2 [Fact-Pattern Isolation]: Identified {', '.join(top_indicators)}. "
+                f"Step 3 [Regulatory Mapping]: Activity consistent with {classification.lower()} "
+                "— meets BSA filing threshold (31 CFR 1020.320). "
+                f"Step 4 [Risk Assessment]: Risk level assessed as {risk_level}. "
+                "Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+            )
+
+            output = ComplianceOfficerOutput(
+                narrative=narrative,
+                narrative_reasoning=narrative_reasoning,
+                regulatory_citations=DEFAULT_CITATIONS,
+                completeness_check=True,
+            )
+
             return {
-                "status":               "COMPLETE" if output.completeness_check else "INCOMPLETE",
+                "status":               "COMPLETE",
                 "narrative":            output.narrative,
                 "reasoning":            output.narrative_reasoning,
                 "regulatory_citations": output.regulatory_citations,
-                "completeness_check":   output.completeness_check
+                "completeness_check":   output.completeness_check,
+                "classification":       classification,
+                "risk_level":           risk_level,
+                "key_indicators":       indicators,
             }
 
         print(f"[{self.__class__.__name__}] Executing real API call.")

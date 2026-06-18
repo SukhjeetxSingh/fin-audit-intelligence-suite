@@ -1,0 +1,47 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_48a091e7",
+        "filing_date": "2026-06-18T11:17:01.346959",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "ai_only"
+    },
+    "subject_information": {
+        "customer_name": "Tracy Lewis",
+        "customer_id": "CUST_0053",
+        "address": "8016 Nicole Stream Suite 650, Williamsside, ID 48017",
+        "customer_since": "2024-05-11",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Structuring",
+        "risk_level": "Medium",
+        "confidence_score": 0.91,
+        "narrative": "Tracy Lewis (ID: CUST_0053) conducted 94 transactions totaling $274,025.18 between the review period. Activity indicates structuring at Medium risk. Key indicators: 7 transactions in $8,000-$9,999 band, Aggregate total $274,025.18 across 94 transactions. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "7 transactions in $8,000-$9,999 band",
+            "Aggregate total $274,025.18 across 94 transactions",
+            "Possible smurfing \u2014 deliberate sub-threshold structuring detected",
+            "High aggregate volume: $274,025.18",
+            "Transaction count: 94"
+        ],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 94 transactions totaling $274,025.18 for Tracy Lewis. Step 2 [Fact-Pattern Isolation]: Identified 7 transactions in $8,000-$9,999 band, Aggregate total $274,025.18 across 94 transactions. Step 3 [Regulatory Mapping]: Activity consistent with structuring \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as Medium. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 49,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "b099b838-6a03-479e-b68c-64f25d5b68af",
+        "processing_date": "2026-06-18T11:17:01.346959",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": null
+    }
+}

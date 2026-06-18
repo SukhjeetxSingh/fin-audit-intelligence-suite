@@ -1,0 +1,47 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_075d6ab7",
+        "filing_date": "2026-06-18T10:40:05.117244",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Michael Stanley",
+        "customer_id": "CUST_0062",
+        "address": "230 Tiffany Mountain Suite 863, South Michael, KY 25205",
+        "customer_since": "2022-04-01",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "Medium",
+        "confidence_score": 0.78,
+        "narrative": "Michael Stanley (ID: CUST_0062) conducted 90 transactions totaling $380,633.78 between the review period. Activity indicates suspicious activity at Medium risk. Key indicators: High aggregate volume: $380,633.78, Transaction count: 90. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High aggregate volume: $380,633.78",
+            "Transaction count: 90",
+            "Velocity anomaly detected within review window",
+            "High aggregate volume: $380,633.78",
+            "Transaction count: 90"
+        ],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 90 transactions totaling $380,633.78 for Michael Stanley. Step 2 [Fact-Pattern Isolation]: Identified High aggregate volume: $380,633.78, Transaction count: 90. Step 3 [Regulatory Mapping]: Activity consistent with suspicious activity \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as Medium. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 46,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "09785d94-b22d-4ba1-a57f-d93a6cf3517e",
+        "processing_date": "2026-06-18T10:40:05.117244",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

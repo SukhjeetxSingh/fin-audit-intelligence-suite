@@ -1,0 +1,47 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_4ab4ee65",
+        "filing_date": "2026-06-18T10:40:08.438395",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Matthew Alexander",
+        "customer_id": "CUST_0081",
+        "address": "PSC 9731, Box 1219, APO AP 50836",
+        "customer_since": "2023-03-20",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "Medium",
+        "confidence_score": 0.78,
+        "narrative": "Matthew Alexander (ID: CUST_0081) conducted 60 transactions totaling $216,693.16 between the review period. Activity indicates suspicious activity at Medium risk. Key indicators: High aggregate volume: $216,693.16, Transaction count: 60. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High aggregate volume: $216,693.16",
+            "Transaction count: 60",
+            "Velocity anomaly detected within review window",
+            "High aggregate volume: $216,693.16",
+            "Transaction count: 60"
+        ],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 60 transactions totaling $216,693.16 for Matthew Alexander. Step 2 [Fact-Pattern Isolation]: Identified High aggregate volume: $216,693.16, Transaction count: 60. Step 3 [Regulatory Mapping]: Activity consistent with suspicious activity \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as Medium. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 46,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "f6eec5e5-3125-4f6d-a1ed-dd9cebe60eca",
+        "processing_date": "2026-06-18T10:40:08.438395",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

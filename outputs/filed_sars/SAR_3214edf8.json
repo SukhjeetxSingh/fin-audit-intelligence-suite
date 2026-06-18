@@ -1,0 +1,47 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_3214edf8",
+        "filing_date": "2026-06-18T11:17:05.866518",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Andre Rodriguez",
+        "customer_id": "CUST_0143",
+        "address": "789 Williams Forges Apt. 037, South Laurieton, MN 73641",
+        "customer_since": "2022-02-09",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "Medium",
+        "confidence_score": 0.78,
+        "narrative": "Andre Rodriguez (ID: CUST_0143) conducted 68 transactions totaling $171,150.38 between the review period. Activity indicates suspicious activity at Medium risk. Key indicators: High aggregate volume: $171,150.38, Transaction count: 68. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High aggregate volume: $171,150.38",
+            "Transaction count: 68",
+            "Velocity anomaly detected within review window",
+            "High aggregate volume: $171,150.38",
+            "Transaction count: 68"
+        ],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 68 transactions totaling $171,150.38 for Andre Rodriguez. Step 2 [Fact-Pattern Isolation]: Identified High aggregate volume: $171,150.38, Transaction count: 68. Step 3 [Regulatory Mapping]: Activity consistent with suspicious activity \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as Medium. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 46,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "b486e4c6-6449-475b-9fa9-5a2d9265fe2c",
+        "processing_date": "2026-06-18T11:17:05.866518",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

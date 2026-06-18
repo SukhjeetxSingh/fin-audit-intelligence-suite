@@ -1,0 +1,47 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_e51ffc09",
+        "filing_date": "2026-06-18T11:17:01.345803",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Cindy Clayton",
+        "customer_id": "CUST_0057",
+        "address": "08330 Robert Stravenue, Garciaberg, AL 72636",
+        "customer_since": "2020-05-26",
+        "risk_rating": "High"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "High",
+        "confidence_score": 0.78,
+        "narrative": "Cindy Clayton (ID: CUST_0057) conducted 101 transactions totaling $286,342.62 between the review period. Activity indicates suspicious activity at High risk. Key indicators: High aggregate volume: $286,342.62, Transaction count: 101. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High aggregate volume: $286,342.62",
+            "Transaction count: 101",
+            "Velocity anomaly detected within review window",
+            "High aggregate volume: $286,342.62",
+            "Transaction count: 101"
+        ],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 101 transactions totaling $286,342.62 for Cindy Clayton. Step 2 [Fact-Pattern Isolation]: Identified High aggregate volume: $286,342.62, Transaction count: 101. Step 3 [Regulatory Mapping]: Activity consistent with suspicious activity \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as High. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 46,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "74c77c57-f35f-494e-abb9-ebf6c35b01c1",
+        "processing_date": "2026-06-18T11:17:01.345803",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

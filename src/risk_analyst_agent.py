@@ -273,6 +273,8 @@ class RiskAnalystAgent(BaseAgent):
         return f"Case: {case_data.case_id}\nAccounts:\n{self._format_accounts(case_data.accounts)}\nTransactions:\n{self._format_transactions(case_data.transactions)}"
 
 
+    # CHANGED: Fallback now covers Structuring, Sanctions, Fraud, Money_Laundering, Other
+    # with explicit 5-step reasoning and a confidence rationale.
     def _generate_fallback_analysis(self, case_data: CaseData) -> RiskAnalystOutput:
         """
         Rule-based fallback when API is unavailable.
@@ -284,57 +286,171 @@ class RiskAnalystAgent(BaseAgent):
         total_amount = sum(t.amount for t in transactions)
         transaction_count = len(transactions)
         amounts = [t.amount for t in transactions]
-        
-        # Rule 1: Structuring — multiple transactions just under $10,000
+
+        # Helper: derive confidence score from number of strong indicators
+        def confidence_from_indicators(ind_count: int, base: float = 0.6) -> float:
+            # Each strong indicator adds 0.08 up to a max of 0.95
+            score = base + ind_count * 0.08
+            return min(round(score, 2), 0.95)
+
+        # STEP-STRUCT: Structuring — multiple transactions just under $10,000
         near_threshold = [a for a in amounts if 8000 <= a <= 9999]
         if len(near_threshold) >= 2:
+            indicators = [
+                f"{len(near_threshold)} transactions between $8,000–$9,999",
+                "Pattern suggests possible CTR threshold avoidance",
+            ]
+            conf = confidence_from_indicators(len(indicators), base=0.7)
+            reasoning = (
+                "Step 1: Data review – examined customer profile and full transaction ledger. "
+                f"Step 2: Pattern recognition – identified {len(near_threshold)} cash transactions "
+                "clustered between $8,000 and $9,999. "
+                "Step 3: Regulatory mapping – this range is consistent with attempts to avoid CTR "
+                "reporting thresholds under 31 CFR 1010.311. "
+                "Step 4: Risk quantification – recurring near-threshold activity materially increases "
+                "structuring risk. "
+                "Step 5: Classification – classified as Structuring due to repeated near-threshold cash "
+                "activity without clear legitimate explanation."
+            )
             return RiskAnalystOutput(
                 classification="Structuring",
-                confidence_score=0.88,
+                confidence_score=conf,
+                confidence_rationale=(
+                    f"Assigned {conf} because there are {len(indicators)} strong indicators of "
+                    "CTR threshold avoidance and no mitigating factors in the case data."
+                ),
                 risk_level="High",
-                key_indicators=[
-                    f"{len(near_threshold)} transactions between $8,000-$9,999",
-                    "Possible CTR threshold avoidance"
-                ],
-                reasoning="Step 1-2: Multiple near-threshold cash transactions detected. Step 3-5: Pattern consistent with structuring under 31 CFR 1020.320."
+                key_indicators=indicators,
+                reasoning=reasoning,
             )
 
-        # Rule 2: Money Laundering — high volume + high total
-        if transaction_count > 50 and total_amount > 200000:
+        # STEP-SANCTIONS: Sanctions – counterparties / locations with sanctions risk
+        # NOTE: This uses simple keyword heuristics; real system would use sanction lists.
+        sanctions_hits = []
+        high_risk_locations = ["iran", "north korea", "syria", "crimea", "cuba"]
+        sanctions_keywords = ["ofac", "sanction", "block", "sdn"]
+
+        for t in transactions:
+            cp = (t.counterparty or "").lower()
+            loc = (t.location or "").lower()
+
+            if any(k in cp for k in sanctions_keywords):
+                sanctions_hits.append(f"Counterparty '{t.counterparty}' flagged by keyword")
+            if any(h in loc for h in high_risk_locations):
+                sanctions_hits.append(f"Location '{t.location}' appears high-risk for sanctions")
+
+        if sanctions_hits:
+            indicators = sanctions_hits
+            conf = confidence_from_indicators(len(indicators), base=0.72)
+            reasoning = (
+                "Step 1: Data review – inspected transaction counterparties and locations for sanctions risk. "
+                f"Step 2: Pattern recognition – found {len(indicators)} sanction-related signals "
+                "(counterparty names and/or high-risk jurisdictions). "
+                "Step 3: Regulatory mapping – these patterns align with sanctions screening obligations "
+                "under OFAC and related regimes. "
+                "Step 4: Risk quantification – sanctions exposure presents elevated compliance and "
+                "reputational risk even with limited transaction volume. "
+                "Step 5: Classification – classified as Sanctions due to observed links to sanctioned "
+                "counterparties or jurisdictions."
+            )
+            return RiskAnalystOutput(
+                classification="Sanctions",
+                confidence_score=conf,
+                confidence_rationale=(
+                    f"Assigned {conf} because {len(indicators)} sanctions-related indicators were found; "
+                    "no mitigating information is present in the case dossier."
+                ),
+                risk_level="High",
+                key_indicators=indicators,
+                reasoning=reasoning,
+            )
+
+        # STEP-ML: Money Laundering — high volume + high total
+        if transaction_count > 50 and total_amount > 200_000:
+            indicators = [
+                f"High transaction velocity: {transaction_count} transactions",
+                f"Large aggregate amount: ${total_amount:,.2f}",
+            ]
+            conf = confidence_from_indicators(len(indicators), base=0.68)
+            reasoning = (
+                "Step 1: Data review – evaluated full transaction history across all accounts. "
+                "Step 2: Pattern recognition – detected high-velocity activity with substantial total volume. "
+                "Step 3: Regulatory mapping – this aligns with layering/structuring stages of money "
+                "laundering typologies. "
+                "Step 4: Risk quantification – combination of high volume and value materially raises "
+                "money laundering risk. "
+                "Step 5: Classification – classified as Money_Laundering due to sustained high-volume, "
+                "high-value activity inconsistent with normal customer profile."
+            )
             return RiskAnalystOutput(
                 classification="Money_Laundering",
-                confidence_score=0.82,
+                confidence_score=conf,
+                confidence_rationale=(
+                    f"Assigned {conf} based on high transaction count and aggregate amount with no "
+                    "legitimate explanatory pattern."
+                ),
                 risk_level="Critical",
-                key_indicators=[
-                    f"High transaction velocity: {transaction_count} transactions",
-                    f"Large aggregate amount: ${total_amount:,.2f}"
-                ],
-                reasoning="Step 1-2: High-frequency, high-volume activity. Step 3-5: Layering pattern consistent with money laundering typology."
+                key_indicators=indicators,
+                reasoning=reasoning,
             )
 
-        # Rule 3: Fraud — customer is new + high risk rating
-        if customer.risk_rating == "High" and customer.customer_since > "2023-01-01":
+        # STEP-FRAUD: Fraud — new high-risk customer with unusual activity
+        if getattr(customer, "risk_rating", "Low") == "High" and getattr(
+            customer, "customer_since", "1900-01-01"
+        ) > "2023-01-01":
+            indicators = [
+                "High risk rating on recently opened account",
+                f"Account opened: {customer.customer_since}",
+            ]
+            conf = confidence_from_indicators(len(indicators), base=0.65)
+            reasoning = (
+                "Step 1: Data review – examined customer onboarding date and risk profile. "
+                "Step 2: Pattern recognition – identified a newly opened account with high inherent risk. "
+                "Step 3: Regulatory mapping – such profiles are associated with fraud and account abuse "
+                "typologies in KYC/AML frameworks. "
+                "Step 4: Risk quantification – early-stage unusual activity in a high-risk profile "
+                "elevates fraud likelihood. "
+                "Step 5: Classification – classified as Fraud due to high-risk, recent onboarding "
+                "paired with suspicious transactional behavior."
+            )
             return RiskAnalystOutput(
                 classification="Fraud",
-                confidence_score=0.75,
+                confidence_score=conf,
+                confidence_rationale=(
+                    f"Assigned {conf} because the customer is both newly onboarded and rated High risk, "
+                    "which are strong fraud indicators."
+                ),
                 risk_level="High",
-                key_indicators=[
-                    "High risk rating on recently opened account",
-                    f"Account opened: {customer.customer_since}"
-                ],
-                reasoning="Step 1-2: New high-risk customer with unusual activity. Step 3-5: Profile consistent with potential fraud indicators."
+                key_indicators=indicators,
+                reasoning=reasoning,
             )
 
-        # Rule 4: Default — low confidence Other
+        # STEP-OTHER: Default — low-confidence Other (manual review)
+        indicators = [
+            f"Total transactions: {transaction_count}",
+            f"Total amount: ${total_amount:,.2f}",
+        ]
+        conf = confidence_from_indicators(len(indicators), base=0.5)
+        reasoning = (
+            "Step 1: Data review – reviewed available customer and transaction data. "
+            "Step 2: Pattern recognition – no strong match to structuring, sanctions, fraud, "
+            "or money laundering typologies. "
+            "Step 3: Regulatory mapping – no clear alignment with a specific suspicious activity "
+            "definition, but activity warrants monitoring. "
+            "Step 4: Risk quantification – residual risk present, but evidence is insufficient "
+            "for a specific typology. "
+            "Step 5: Classification – classified as Other and recommended for manual review."
+        )
         return RiskAnalystOutput(
             classification="Other",
-            confidence_score=0.55,
+            confidence_score=conf,
+            confidence_rationale=(
+                f"Assigned {conf} because only {len(indicators)} general indicators were present and "
+                "no specific typology pattern was identified."
+            ),
             risk_level="Medium",
-            key_indicators=[
-                f"Total transactions: {transaction_count}",
-                f"Total amount: ${total_amount:,.2f}"
-            ],
-            reasoning="Step 1-2: Activity reviewed. Step 3-5: No clear typology match; flagged for manual review."
+            key_indicators=indicators,
+            reasoning=reasoning,
         )
 
 # ===== PROMPT ENGINEERING HELPERS =====

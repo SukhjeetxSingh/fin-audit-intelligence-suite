@@ -1,0 +1,47 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_1c31e602",
+        "filing_date": "2026-06-18T10:40:15.154311",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Robin Wheeler",
+        "customer_id": "CUST_0073",
+        "address": "90965 Rodriguez Courts Suite 388, South Neil, NH 89571",
+        "customer_since": "2023-01-24",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Other",
+        "risk_level": "Medium",
+        "confidence_score": 0.78,
+        "narrative": "Robin Wheeler (ID: CUST_0073) conducted 56 transactions totaling $103,933.42 between the review period. Activity indicates suspicious activity at Medium risk. Key indicators: High aggregate volume: $103,933.42, Transaction count: 56. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High aggregate volume: $103,933.42",
+            "Transaction count: 56",
+            "Velocity anomaly detected within review window",
+            "High aggregate volume: $103,933.42",
+            "Transaction count: 56"
+        ],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 56 transactions totaling $103,933.42 for Robin Wheeler. Step 2 [Fact-Pattern Isolation]: Identified High aggregate volume: $103,933.42, Transaction count: 56. Step 3 [Regulatory Mapping]: Activity consistent with suspicious activity \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as Medium. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 46,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "18daa19f-4481-42c1-b60d-ee15c64a8131",
+        "processing_date": "2026-06-18T10:40:15.154311",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

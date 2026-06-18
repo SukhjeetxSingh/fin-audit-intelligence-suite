@@ -1,0 +1,46 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_e6f1e5ae",
+        "filing_date": "2026-06-18T11:17:10.867819",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "ai_only"
+    },
+    "subject_information": {
+        "customer_name": "Regina Ramos",
+        "customer_id": "CUST_0137",
+        "address": "82547 Gwendolyn Overpass, Evanschester, AS 38894",
+        "customer_since": "2017-07-27",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Structuring",
+        "risk_level": "Medium",
+        "confidence_score": 0.91,
+        "narrative": "Regina Ramos (ID: CUST_0137) conducted 49 transactions totaling $144,448.68 between the review period. Activity indicates structuring at Medium risk. Key indicators: 3 transactions in $8,000-$9,999 band, Aggregate total $144,448.68 across 49 transactions. Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "3 transactions in $8,000-$9,999 band",
+            "Aggregate total $144,448.68 across 49 transactions",
+            "Possible smurfing \u2014 deliberate sub-threshold structuring detected",
+            "High aggregate volume: $144,448.68"
+        ],
+        "ai_reasoning": "Step 1 [Data Ingestion]: Parsed 49 transactions totaling $144,448.68 for Regina Ramos. Step 2 [Fact-Pattern Isolation]: Identified 3 transactions in $8,000-$9,999 band, Aggregate total $144,448.68 across 49 transactions. Step 3 [Regulatory Mapping]: Activity consistent with structuring \u2014 meets BSA filing threshold (31 CFR 1020.320). Step 4 [Risk Assessment]: Risk level assessed as Medium. Step 5 [Constraint Check]: Who/What/When/Where/Why coverage verified."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 49,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "2e3c64c4-4e66-4dc0-b8e7-dbd0cd219aa6",
+        "processing_date": "2026-06-18T11:17:10.867819",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": null
+    }
+}

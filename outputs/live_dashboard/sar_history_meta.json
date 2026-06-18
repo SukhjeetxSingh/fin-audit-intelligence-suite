@@ -1,20 +1,7 @@
 {
-  "total_files": 1568,
-  "loaded": 1565,
-  "failed": 3,
-  "failures": [
-    [
-      "SAR_11b6e035.json",
-      "Expecting value: line 1 column 1 (char 0)"
-    ],
-    [
-      "SAR_45c00082.json",
-      "Expecting value: line 1 column 1 (char 0)"
-    ],
-    [
-      "SAR_ca4a2210.json",
-      "Expecting value: line 1 column 1 (char 0)"
-    ]
-  ],
-  "generated_at": "2026-06-17T10:59:55.670589"
+  "total_files": 43,
+  "loaded": 43,
+  "failed": 0,
+  "failures": [],
+  "generated_at": "2026-06-18T11:17:19.549887"
 }
