@@ -1,5 +1,5 @@
 directories:  
   output_charts: 
-    "../outputs/charts"  
+    "/outputs/charts"  
   filed_sars: 
-    "../outputs/filed_sars"
+    "/outputs/filed_sars"

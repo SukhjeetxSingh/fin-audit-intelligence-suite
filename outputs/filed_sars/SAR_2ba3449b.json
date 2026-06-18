@@ -1,0 +1,44 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_2ba3449b",
+        "filing_date": "2026-06-18T12:26:48.056099",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Michael Stanley",
+        "customer_id": "CUST_0062",
+        "address": "230 Tiffany Mountain Suite 863, South Michael, KY 25205",
+        "customer_since": "2022-04-01",
+        "risk_rating": "Medium"
+    },
+    "suspicious_activity": {
+        "classification": "Structuring",
+        "risk_level": "High",
+        "confidence_score": 0.85,
+        "narrative": "Michael Stanley (ID: CUST_0062) conducted 90 Debit_Purchase, ACH_Debit transactions totaling $380,633.78 between 2025-02-03 to 2025-08-01. Activity indicates structuring at 85% confidence (High risk). Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High transaction volume",
+            "Potential threshold avoidance"
+        ],
+        "ai_reasoning": "Step 1: Data review \u2013 analyzed 90 transactions totaling $380,633.78. Step 2: Pattern recognition \u2013 heuristic classification as Structuring. Step 3: Regulatory mapping \u2013 risk level set to High at 85% confidence."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 40,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "0ff9b3f9-fd81-471f-9ba2-8e3cd2035977",
+        "processing_date": "2026-06-18T12:26:48.056099",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}

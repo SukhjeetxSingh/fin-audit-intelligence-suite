@@ -1,0 +1,44 @@
+{
+    "sar_metadata": {
+        "sar_id": "SAR_b1ec8fc6",
+        "filing_date": "2026-06-18T12:26:48.053444",
+        "filing_type": "Suspicious Activity Report",
+        "ai_generated": true,
+        "review_status": "human_approved"
+    },
+    "subject_information": {
+        "customer_name": "Jacqueline Rodriguez",
+        "customer_id": "CUST_0111",
+        "address": "49331 Lewis Views Apt. 516, Lake Maryshire, DE 59549",
+        "customer_since": "2022-02-27",
+        "risk_rating": "High"
+    },
+    "suspicious_activity": {
+        "classification": "Structuring",
+        "risk_level": "High",
+        "confidence_score": 0.85,
+        "narrative": "Jacqueline Rodriguez (ID: CUST_0111) conducted 121 Debit_Purchase, ACH_Debit transactions totaling $386,834.91 between 2025-02-05 to 2025-08-01. Activity indicates structuring at 85% confidence (High risk). Transactions lack clear economic purpose, consistent with suspicious activity under the Bank Secrecy Act, 31 CFR 1020.320.",
+        "key_indicators": [
+            "High transaction volume",
+            "Potential threshold avoidance"
+        ],
+        "ai_reasoning": "Step 1: Data review \u2013 analyzed 121 transactions totaling $386,834.91. Step 2: Pattern recognition \u2013 heuristic classification as Structuring. Step 3: Regulatory mapping \u2013 risk level set to High at 85% confidence."
+    },
+    "regulatory_compliance": {
+        "citations": [
+            "31 CFR 1020.320",
+            "Bank Secrecy Act (BSA)"
+        ],
+        "narrative_word_count": 40,
+        "compliance_status": "approved"
+    },
+    "audit_trail": {
+        "case_id": "baaab719-5da1-4e12-9047-3c52e1ca4a57",
+        "processing_date": "2026-06-18T12:26:48.053444",
+        "ai_agents_used": [
+            "RiskAnalyst",
+            "ComplianceOfficer"
+        ],
+        "human_reviewer": "compliance_officer"
+    }
+}
