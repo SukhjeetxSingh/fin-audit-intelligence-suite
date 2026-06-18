@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-18T11:17:19.550922",
+  "generated_at": "2026-06-18T18:09:55.464478",
   "summary": {
     "total_cases_this_batch": 25,
     "reviewed": 25,
     "pending_review": 0,
-    "approved_sars": 17,
-    "rejected": 8,
+    "approved_sars": 7,
+    "rejected": 18,
     "total_flagged_amount": 4466123.58
   },
   "cases": [
@@ -81,7 +81,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "e163e555-7569-44ec-8562-3a176c7438b8",
+      "case_id": "40022acd-56d0-4fdc-a76d-e811278aff9e",
       "decision": "PROCEED",
       "ai_classification": "Structuring",
       "ai_confidence": 0.91,
@@ -161,13 +161,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "cb980607-2ede-41ec-8b2d-4f5c2f7d79f4",
-      "decision": "PROCEED",
+      "case_id": "ca9f35d6-d1f3-471c-9fba-40e66edc02ae",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0057",
@@ -241,7 +241,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "74c77c57-f35f-494e-abb9-ebf6c35b01c1",
+      "case_id": "67d38acd-1ad7-4546-a1cc-b371851c8260",
       "decision": "PROCEED",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
@@ -321,7 +321,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "b099b838-6a03-479e-b68c-64f25d5b68af",
+      "case_id": "fe736640-b280-4cac-a37e-12857955b9d2",
       "decision": "PROCEED",
       "ai_classification": "Structuring",
       "ai_confidence": 0.91,
@@ -401,13 +401,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "335ae368-e22f-4ee2-83da-2dd09866e298",
-      "decision": "PROCEED",
+      "case_id": "cb965030-824a-4a50-9cfb-2b1fb6f2cf04",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0129",
@@ -481,8 +481,8 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "9868c32a-e94d-4a33-8d9b-3337b3ef96a8",
-      "decision": "HUMAN_REVIEW",
+      "case_id": "4e332b7b-31df-4518-9e09-89f9a001dffb",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
@@ -561,8 +561,8 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "c2f1803a-a6e9-4661-8957-cf93e538b8c4",
-      "decision": "HUMAN_REVIEW",
+      "case_id": "0cbda97b-9b3f-485d-a0cc-b22461d3efbf",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
@@ -641,8 +641,8 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "1a1e432f-f9de-41c2-8d8c-4f517831cc18",
-      "decision": "HUMAN_REVIEW",
+      "case_id": "7aff9889-c145-4eb9-9d60-5fc9ec341571",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
@@ -721,13 +721,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "b486e4c6-6449-475b-9fa9-5a2d9265fe2c",
-      "decision": "PROCEED",
+      "case_id": "512d3a6a-f9d4-405f-a76a-a30fcf113c58",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0141",
@@ -801,13 +801,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "2a72e2ad-f29c-4e72-9229-3c0708d5acdb",
-      "decision": "PROCEED",
+      "case_id": "c68bf550-cc90-45db-8e8a-19a934bb3519",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0018",
@@ -881,7 +881,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "2e3abb9e-564a-47a1-b958-6aa83e689b87",
+      "case_id": "e876a8c4-fbd1-4b1b-8049-051626615e54",
       "decision": "PROCEED",
       "ai_classification": "Structuring",
       "ai_confidence": 0.91,
@@ -961,13 +961,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "6e38cba5-20f4-45f7-883d-d92cfba1b316",
-      "decision": "PROCEED",
+      "case_id": "18897c1c-f196-4719-968e-735e4e7bcbfc",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0038",
@@ -1041,8 +1041,8 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "a85eb666-b9fd-45ed-a35c-7b01ad667fe6",
-      "decision": "HUMAN_REVIEW",
+      "case_id": "55372a4e-e130-445e-b75b-defb627bfd75",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
@@ -1121,8 +1121,8 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "41b40dbf-e837-43df-bc87-2228b022195a",
-      "decision": "HUMAN_REVIEW",
+      "case_id": "2e9807e9-1597-4228-95bd-0a77769aa98a",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
@@ -1201,8 +1201,8 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "80cfd9e6-c963-4133-a775-2094d14d213a",
-      "decision": "HUMAN_REVIEW",
+      "case_id": "aabac92c-f893-4135-b9ea-9332af48ef49",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
@@ -1281,13 +1281,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "d23dc239-5c39-4c9b-aff2-7f0cf01bb642",
-      "decision": "PROCEED",
+      "case_id": "885b646b-7cd8-4abb-83f4-56ecd0c946cd",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0073",
@@ -1361,13 +1361,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "814bf2f0-dab6-4985-9d1a-70dbeab72d8e",
-      "decision": "PROCEED",
+      "case_id": "c1211c98-b523-4a89-8344-d86de6fc8726",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0090",
@@ -1440,7 +1440,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "2d486a25-1567-4e0c-a132-95573a1ec782",
+      "case_id": "625f6eed-ce0f-4789-b6c4-78568a0b0d7b",
       "decision": "PROCEED",
       "ai_classification": "Structuring",
       "ai_confidence": 0.91,
@@ -1519,7 +1519,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "2e3c64c4-4e66-4dc0-b8e7-dbd0cd219aa6",
+      "case_id": "6e2a2b8b-4b4f-4ac2-8028-753529ce7a92",
       "decision": "PROCEED",
       "ai_classification": "Structuring",
       "ai_confidence": 0.91,
@@ -1598,13 +1598,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "2bdff7bc-b702-4a2f-8cb4-0ae202b9fec8",
-      "decision": "PROCEED",
+      "case_id": "8c25a9c2-9ca4-4337-a5d6-9c3ea7cd9ea7",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0009",
@@ -1677,8 +1677,8 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "ac6a9f30-4832-4d41-bb19-e3cdb56eca18",
-      "decision": "HUMAN_REVIEW",
+      "case_id": "fb8dabc0-83f1-4a83-8238-68833273cb3a",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
@@ -1756,7 +1756,7 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "062fb463-10d6-46fb-8625-6bf6f1926efe",
+      "case_id": "ad99ac19-56ca-4d1d-af4f-a6cb31d6eb3e",
       "decision": "PROCEED",
       "ai_classification": "Structuring",
       "ai_confidence": 0.91,
@@ -1835,13 +1835,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "b6326fd3-ade1-4ea9-acbf-45f3aa65dafd",
-      "decision": "PROCEED",
+      "case_id": "80065e07-3ea8-44bd-bcd9-995d4cbf1de5",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     },
     {
       "customer_id": "CUST_0027",
@@ -1914,8 +1914,8 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "1576d5ad-edd4-4acf-bc2d-6a5232a9c8ff",
-      "decision": "HUMAN_REVIEW",
+      "case_id": "96c8fda6-07bc-4b84-9631-4b116ce1ea10",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
@@ -1993,13 +1993,13 @@
         }
       ],
       "status": "reviewed",
-      "case_id": "19b62614-7273-435d-a300-8100ff972524",
-      "decision": "PROCEED",
+      "case_id": "bb8f00f8-2e74-4499-8e00-e01e8cf18d14",
+      "decision": "REJECT",
       "ai_classification": "Other",
       "ai_confidence": 0.78,
       "compliance_narrative_exists": true,
-      "is_approved_sar": true,
-      "is_rejected": false
+      "is_approved_sar": false,
+      "is_rejected": true
     }
   ]
 }

@@ -15,6 +15,7 @@ import contextlib
 import io
 import json
 import os
+import time
 import uuid
 import statistics
 import matplotlib.pyplot as plt
@@ -261,6 +262,8 @@ def create_sar_document(
     compliance_review,
     review_status: str = "human_approved",
     human_reviewer: str | None = "compliance_officer",
+    processing_time_seconds: float | None = None,
+
 ) -> dict:
     """
     Build a complete SAR document dict from the three pipeline outputs.
@@ -294,6 +297,8 @@ def create_sar_document(
             'narrative':       compliance_review.narrative,
             'key_indicators':  risk_analysis.key_indicators,
             'ai_reasoning':    risk_analysis.reasoning,
+            'processing_time_seconds': processing_time_seconds,
+
         },
         'regulatory_compliance': {
             'citations':            getattr(compliance_review, 'regulatory_citations', []),
@@ -321,6 +326,8 @@ def save_sar_document(sar_document: dict) -> None:
         with open(filename, 'w') as f:
             json.dump(sar_document, f, indent=4, default=json_default)
         print(f"✅ SAR saved: {filename}")
+        print(f"✅ SAR successfully saved: {filename}")
+
     except IOError as e:
         print(f"❌ Failed to save SAR document: {e}")
 
@@ -345,7 +352,7 @@ def run_agent_pipeline(case_list: list, orchestrator, is_high_risk: bool = True)
       processed : list[str]   — customer_ids that went through
       approved  : list[str]   — case_ids where SAR was filed
       rejected  : list[str]   — case_ids that were halted / sent to human review
-      decisions : list[dict]  — full audit trail
+      decisions : list[dict]  — full audit trail (now includes timing)
       label     : str         — 'selected_high_risk_customers' or 'other_cases'
     """
     from src.foundation_sar import RiskAnalystOutput, ComplianceOfficerOutput
@@ -365,6 +372,9 @@ def run_agent_pipeline(case_list: list, orchestrator, is_high_risk: bool = True)
     for case in case_list:
         print(f"\n🔍 Case: {case.case_id} | Customer: {case.customer.name}")
 
+        # ---- timing: start of full-case processing ----
+        case_start_time = time.time()
+
         dossier                = case.model_dump()
         dossier["risk_rating"] = case.customer.risk_rating
 
@@ -375,7 +385,7 @@ def run_agent_pipeline(case_list: list, orchestrator, is_high_risk: bool = True)
             final = result["final_output"]
 
             # Normalize classification into allowed literals
-            raw_class = final.get("classification") or final.get("primary_risk_category", "Other")
+            raw_class       = final.get("classification") or final.get("primary_risk_category", "Other")
             raw_class_lower = str(raw_class).lower()
 
             if raw_class_lower == "structuring":
@@ -412,6 +422,7 @@ def run_agent_pipeline(case_list: list, orchestrator, is_high_risk: bool = True)
                 regulatory_citations = final.get("regulatory_citations", ["31 CFR 1020.320"]),
                 completeness_check   = final.get("completeness_check", True),
             )
+
             # --- AI confidence gate (strict) --------------------------------
             ai_confident = (
                 compliance_review.completeness_check
@@ -420,6 +431,7 @@ def run_agent_pipeline(case_list: list, orchestrator, is_high_risk: bool = True)
             )
             # -----------------------------------------------------------------
 
+            case_duration = time.time() - case_start_time
             if ai_confident:
                 # AI-only SAR (no human reviewer)
                 sar_doc = create_sar_document(
@@ -428,6 +440,7 @@ def run_agent_pipeline(case_list: list, orchestrator, is_high_risk: bool = True)
                     compliance_review,
                     review_status="ai_only",
                     human_reviewer=None,
+                    processing_time_seconds=case_duration,
                 )
                 save_sar_document(sar_doc)
 
@@ -442,6 +455,7 @@ def run_agent_pipeline(case_list: list, orchestrator, is_high_risk: bool = True)
                     'ai_classification':           risk_analysis.classification,
                     'ai_confidence':               risk_analysis.confidence_score,
                     'compliance_narrative_exists': True,
+                    'processing_time_seconds':     case_duration,
                 })
                 print(
                     f"   ✅ AI-ONLY SAR filed | {classification} | "
@@ -449,76 +463,79 @@ def run_agent_pipeline(case_list: list, orchestrator, is_high_risk: bool = True)
                 )
 
             else:
-                # Any doubt → prompt human Compliance Officer
-                human_approves = get_human_decision(risk_analysis.risk_level)
+                # Any doubt → only escalate High/Critical to human
+                if risk_analysis.risk_level in ["High", "Critical"]:
+                    # High/Critical risk → require human approval
+                    human_approves = get_human_decision(risk_analysis.risk_level)
 
-                if human_approves:
-                    # Human says: file SAR
-                    sar_doc = create_sar_document(
-                        case,
-                        risk_analysis,
-                        compliance_review,
-                        review_status="human_approved",
-                        human_reviewer="compliance_officer",
-                    )
-                    save_sar_document(sar_doc)
+                    if human_approves:
+                        # Human says: file SAR
+                        case_duration = time.time() - case_start_time
 
-                    approved.append(case.case_id)
-                    processed.append(case.customer.customer_id)
-                    decisions.append({
-                        'case_id':                     case.case_id,
-                        'customer_id':                 case.customer.customer_id,
-                        'customer_name':               case.customer.name,
-                        'risk_rating':                 case.customer.risk_rating,
-                        'decision':                    'PROCEED',
-                        'ai_classification':           risk_analysis.classification,
-                        'ai_confidence':               risk_analysis.confidence_score,
-                        'compliance_narrative_exists': True,
-                    })
-                    print("   ✅ HUMAN-APPROVED SAR filed")
+                        sar_doc = create_sar_document(
+                            case,
+                            risk_analysis,
+                            compliance_review,
+                            review_status="human_approved",
+                            human_reviewer="compliance_officer",
+                            processing_time_seconds=case_duration,
+                        )
+                        save_sar_document(sar_doc)
+
+                        approved.append(case.case_id)
+                        processed.append(case.customer.customer_id)
+
+                        decisions.append({
+                            'case_id':                     case.case_id,
+                            'customer_id':                 case.customer.customer_id,
+                            'customer_name':               case.customer.name,
+                            'risk_rating':                 case.customer.risk_rating,
+                            'decision':                    'PROCEED',
+                            'ai_classification':           risk_analysis.classification,
+                            'ai_confidence':               risk_analysis.confidence_score,
+                            'compliance_narrative_exists': True,
+                            'processing_time_seconds':     case_duration,
+                        })
+                        print("   ✅ HUMAN-APPROVED SAR filed")
+
+                    else:
+                        # Human says: do NOT file SAR
+                        case_duration = time.time() - case_start_time
+
+                        rejected.append(case.case_id)
+                        decisions.append({
+                            'case_id':                     case.case_id,
+                            'customer_id':                 case.customer.customer_id,
+                            'customer_name':               case.customer.name,
+                            'risk_rating':                 case.customer.risk_rating,
+                            'decision':                    'HUMAN_REVIEW',
+                            'ai_classification':           risk_analysis.classification,
+                            'ai_confidence':               risk_analysis.confidence_score,
+                            'compliance_narrative_exists': True,
+                            'processing_time_seconds':     case_duration,
+                        })
+                        print("   👤 HUMAN REVIEW — SAR not filed")
 
                 else:
-                    # Human says: do NOT file SAR
+                    # Low/Medium risk → auto no SAR (no human gate)
+                    case_duration = time.time() - case_start_time
+
                     rejected.append(case.case_id)
                     decisions.append({
                         'case_id':                     case.case_id,
                         'customer_id':                 case.customer.customer_id,
                         'customer_name':               case.customer.name,
                         'risk_rating':                 case.customer.risk_rating,
-                        'decision':                    'HUMAN_REVIEW',
+                        'decision':                    'REJECT',
                         'ai_classification':           risk_analysis.classification,
                         'ai_confidence':               risk_analysis.confidence_score,
                         'compliance_narrative_exists': True,
+                        'processing_time_seconds':     case_duration,
                     })
-                    print("   👤 HUMAN REVIEW — SAR not filed")
-
-        elif status == "HUMAN_REVIEW":
-            rejected.append(case.case_id)
-            decisions.append({
-                'case_id':                     case.case_id,
-                'customer_id':                 case.customer.customer_id,
-                'customer_name':               case.customer.name,
-                'risk_rating':                 case.customer.risk_rating,
-                'decision':                    'HUMAN_REVIEW',
-                'ai_classification':           'Unknown',
-                'ai_confidence':               0.0,
-                'compliance_narrative_exists': False,
-            })
-            print(f"   👤 HUMAN REVIEW | Stage: {result.get('stage')}")
-
-        else:   # HALTED / REJECT
-            rejected.append(case.case_id)
-            decisions.append({
-                'case_id':                     case.case_id,
-                'customer_id':                 case.customer.customer_id,
-                'customer_name':               case.customer.name,
-                'risk_rating':                 case.customer.risk_rating,
-                'decision':                    'REJECT',
-                'ai_classification':           'Unknown',
-                'ai_confidence':               0.0,
-                'compliance_narrative_exists': False,
-            })
-            print(f"   🛑 HALTED | Stage: {result.get('stage')}")
+                    print(
+                        f"   🛑 AUTO-REJECT (risk={risk_analysis.risk_level}) — "
+                        "no SAR filed, no human escalation"
+                    )
 
     print("\n" + "=" * 60)
     print(f"  BATCH COMPLETE | Filed: {len(approved)} | Halted/Review: {len(rejected)}")
@@ -537,53 +554,70 @@ def analyze_workflow_efficiency(processed_cases, approved_sars, rejected_cases, 
     approved_count = len(approved_sars)
     rejected_count = len(rejected_cases)
 
-    # Time efficiency
-    processing_times   = [c.get("processing_time_ms", 0) for c in processed_cases
-                          if isinstance(c, dict) and "processing_time_ms" in c]
-    avg_time_ms        = sum(processing_times) / len(processing_times) if processing_times else 0
-    human_review_ms    = 30 * 60 * 1000
-    time_savings_pct   = ((human_review_ms - avg_time_ms) / human_review_ms * 100) if avg_time_ms else 0
+    # ---- Real timing from audit_decisions ----
+    # We stored `processing_time_seconds` in run_agent_pipeline()
+    times = [
+        d["processing_time_seconds"]
+        for d in audit_decisions
+        if isinstance(d, dict) and "processing_time_seconds" in d
+    ]
+    avg_time_s = sum(times) / len(times) if times else 0.0
 
-    # Cost efficiency
+    # Human baseline ~30 minutes per case (in seconds)
+    human_review_s  = 30 * 60
+    if avg_time_s > 0:
+        time_savings_pct = ((human_review_s - avg_time_s) / human_review_s) * 100
+    else:
+        time_savings_pct = 0.0
+
+    # ---- Cost efficiency (same structure, but now clearly tied to measured throughput) ----
     ai_cost_per_case      = 0.50
     ai_cost_compliance    = 5.00
     human_cost_per_case   = 85.00
     human_cost_compliance = 150.00
-    ai_total     = (total_cases * ai_cost_per_case)   + (approved_count * ai_cost_compliance)
-    human_total  = (total_cases * human_cost_per_case) + (approved_count * human_cost_compliance)
-    cost_savings  = human_total - ai_total
-    roi_pct       = (cost_savings / human_total * 100) if human_total > 0 else 0
 
-    # KPIs
-    filter_efficiency = (rejected_count / total_cases * 100) if total_cases > 0 else 0
-    confidences       = [d['ai_confidence'] for d in audit_decisions] if audit_decisions else []
-    high_conf_cases   = [c for c in confidences if c >= 0.80]
-    precision_rate    = len(high_conf_cases) / len(confidences) if confidences else 0
+    ai_total    = (total_cases * ai_cost_per_case)    + (approved_count * ai_cost_compliance)
+    human_total = (total_cases * human_cost_per_case) + (approved_count * human_cost_compliance)
+    cost_savings = human_total - ai_total
+    roi_pct      = (cost_savings / human_total * 100) if human_total > 0 else 0.0
+
+    # ---- KPIs ----
+    filter_efficiency = (rejected_count / total_cases * 100) if total_cases > 0 else 0.0
+
+    confidences = [d["ai_confidence"] for d in audit_decisions if "ai_confidence" in d]
+    high_conf_cases = [c for c in confidences if c >= 0.80]
+    precision_rate  = (len(high_conf_cases) / len(confidences)) if confidences else 0.0
 
     print("\n" + "=" * 45)
     print("      CORPORATE SAR WORKFLOW DASHBOARD")
     print("=" * 45)
-    print(f"Throughput Metrics:")
+
+    print("Throughput Metrics:")
     print(f"  Total Volume         : {total_cases} cases")
     print(f"  SAR Filing Volume    : {approved_count}")
     print(f"  Cases Filtered Early : {rejected_count}")
-    print(f"\nTime Efficiency (vs Human Baseline ~30min/case):")
-    if avg_time_ms:
-        print(f"  Avg AI Processing    : {avg_time_ms / 1000:.1f}s per case")
+
+    print("\nTime Efficiency (vs Human Baseline ~30min/case):")
+    if avg_time_s > 0:
+        print(f"  Avg AI Processing    : {avg_time_s:.2f}s per case")
         print(f"  Time Saved           : ~{time_savings_pct:.1f}% faster than manual review")
+        print(f"  Approx Throughput    : {60/avg_time_s:.1f} cases per minute")
     else:
-        print(f"  Avg AI Processing    : <1s per case (estimated)")
-        print(f"  Time Saved           : ~99.9% faster than manual review")
-    print(f"\nFinancial Performance (vs Full Human Workflow):")
+        print("  Avg AI Processing    : <1s per case (no timing logged yet)")
+        print("  Time Saved           : (timing not available; default baseline only)")
+
+    print("\nFinancial Performance (vs Full Human Workflow):")
     print(f"  AI Pipeline Cost     : ${ai_total:.2f}")
     print(f"  Human Equivalent     : ${human_total:.2f}")
     print(f"  Cost Savings         : ${cost_savings:.2f}")
     print(f"  ROI                  : {roi_pct:.1f}% cost reduction")
-    print(f"\nOperational KPIs:")
+
+    print("\nOperational KPIs:")
     print(f"  High Confidence Rate : {precision_rate:.1%} of cases >= 80% confidence")
     print(f"  Triage Filter Rate   : {filter_efficiency:.1f}%")
     if filter_efficiency == 0:
-        print(f"  Note: 0% filter = all cases flagged suspicious (conservative AI tuning)")
+        print("  Note: 0% filter = all cases flagged suspicious (conservative AI tuning)")
+
     print("=" * 45)
 
 
@@ -775,6 +809,8 @@ def aggregate_sar_history(config: dict) -> pd.DataFrame:
                 'ai_agents_used':       audit.get('ai_agents_used'),
                 'human_reviewer':       audit.get('human_reviewer'),
                 'source_file':          fname,
+                'processing_time_seconds': susp.get('processing_time_seconds'),  # ← NEW
+
             })
         except Exception as e:
             failures.append((fname, str(e)))
